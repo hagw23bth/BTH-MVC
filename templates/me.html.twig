@@ -1,0 +1,13 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Me{% endblock %}
+
+{% block body %}
+    <div class="inner-container">
+        <h1>Lite om mig</h1>
+        <p>Jag heter Hanna, är 29 år och bor i Mölndal. De senaste åren har jag arbetat som trädgårdsmästare men har tidigare studerat matematik på högskolenivå och hoppas i framtiden kunna kombinera matematiken med det jag nu ska lära mig i programmering. Här är en bild på mig när jag gör vad jag gillar mest - att klättra!</p>
+        <a href="{{ asset('img/profilecircle.png') }}">
+            <img src="{{ asset('img/profilecircle.png') }}" alt="" class="circle">
+        </a>
+    </div>
+{% endblock %}
