@@ -1,0 +1,18 @@
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.card {
+    padding: 10px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 40px;
+    text-align: center;
+}
+
+.card.red {
+    color: red !important;
+}

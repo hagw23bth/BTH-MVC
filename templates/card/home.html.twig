@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Kortspel{% endblock %}
+
+{% block body %}
+
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('deck') }}">Visa hela kortleken</a></li>
+            <li><a href="{{ path('shuffle') }}">Blanda och visa kortleken</a></li>
+            <li><a href="{{ path('draw') }}">Dra ett kort från kortleken</a></li>
+            <li><a href="{{ path('draw_number') }}">Dra flera kort från kortleken</a></li>
+            <li><a href="{{ path('session') }}">Visa sessionens innehåll</a></li>
+            <li><a href="{{ path('session_delete') }}">Radera sessionens innehåll</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Välkommen till Kortspel</h1>
+        <p>Här kan du hantera en kortlek på olika sätt. Blanda, visa hela kortleken, dra ett eller flera kort och hantera dina dragningar med session.</p>
+        <a href="{{ asset('img/cards.jpg') }}">
+            <img src="{{ asset('img/cards.jpg') }}" alt="Kortlek" class="image">
+        </a>
+    </div>
+</div>
+{% endblock %}

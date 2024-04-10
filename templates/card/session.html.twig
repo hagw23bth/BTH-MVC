@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Sessionens innehåll{% endblock %}
+
+{% block body %}
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('deck') }}">Visa hela kortleken</a></li>
+            <li><a href="{{ path('shuffle') }}">Blanda och visa kortleken</a></li>
+            <li><a href="{{ path('draw') }}">Dra ett kort från kortleken</a></li>
+            <li><a href="{{ path('draw_number') }}">Dra flera kort från kortleken</a></li>
+            <li><a href="{{ path('session') }}">Visa sessionens innehåll</a></li>
+            <li><a href="{{ path('session_delete') }}">Radera sessionens innehåll</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Sessionens innehåll</h1>
+        {% if sessionData is empty %}
+        <p>Sessionen är tom.</p>
+        {% else %}
+        <ul>
+            {% for key, value in sessionData %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <a href="{{ path('session_delete') }}">Rensa sessionen</a>
+        {% for message in app.flashes('success') %}
+        <div class="alert alert-success">
+            {{ message }}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Drag flera kort{% endblock %}
+
+{% block body %}
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('deck') }}">Visa hela kortleken</a></li>
+            <li><a href="{{ path('shuffle') }}">Blanda och visa kortleken</a></li>
+            <li><a href="{{ path('draw') }}">Dra ett kort från kortleken</a></li>
+            <li><a href="{{ path('draw_number') }}">Dra flera kort från kortleken</a></li>
+            <li><a href="{{ path('session') }}">Visa sessionens innehåll</a></li>
+            <li><a href="{{ path('session_delete') }}">Radera sessionens innehåll</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Drag flera kort</h2>
+        <form action="{{ path('draw_number') }}" method="GET">
+            <label for="number">Ange antal kort att dra (max {{ maxDraw }}):</label>
+            <input type="number" id="number" name="number" min="1" max="{{ maxDraw }}" required>
+            <button type="submit">Dra kort</button>
+        </form>
+    
+        {% if drawnCards is not empty %}
+            <h3>Dragna kort</h3>
+            <div class="deck">
+                {% for card in drawnCards %}
+                    <div class="card {{ card.getSuit() in ['Hearts', 'Diamonds'] ? 'red' : '' }}">
+                        {{ card.getGraphic() }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+        <p>Kvarvarande kort i leken: {{ remaining }}</p>
+    </div>
+</div>
+{% endblock %}

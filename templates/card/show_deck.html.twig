@@ -1,0 +1,30 @@
+
+{% extends "base.html.twig" %}
+
+{% block title %}Kortlek{% endblock %}
+
+{% block body %}
+
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('deck') }}">Visa hela kortleken</a></li>
+            <li><a href="{{ path('shuffle') }}">Blanda och visa kortleken</a></li>
+            <li><a href="{{ path('draw') }}">Dra ett kort från kortleken</a></li>
+            <li><a href="{{ path('draw_number') }}">Dra flera kort från kortleken</a></li>
+            <li><a href="{{ path('session') }}">Visa sessionens innehåll</a></li>
+            <li><a href="{{ path('session_delete') }}">Radera sessionens innehåll</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h2>Kortlek</h2>
+        <div class="deck">
+            {% for card in deck %}
+                <div class="card {{ card.getSuit() in ['Hearts', 'Diamonds'] ? 'red' : '' }}">
+                    {{ card.getGraphic() }}
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

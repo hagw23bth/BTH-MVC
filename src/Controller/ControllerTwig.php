@@ -41,16 +41,16 @@ class ControllerTwig extends AbstractController
     #[Route("/api", name: "api")]
     public function api(): Response
     {
-    $apiRoutes = [
-        [
-            'title' => 'Daily Quote',
-            'path' => '/api/quote',
-            'description' => 'Returns a random quote along with the current date and timestamp.'
-        ]
-    ];
+        $apiRoutes = [
+            [
+                'title' => 'Daily Quote',
+                'path' => '/api/quote',
+                'description' => 'Returns a random quote along with the current date and timestamp.'
+            ]
+        ];
 
-    return $this->render('api.html.twig', ['apiRoutes' => $apiRoutes]);
-}
+        return $this->render('api.html.twig', ['apiRoutes' => $apiRoutes]);
+    }
 
     #[Route("/api/quote", name: "quote")]
     public function quote(): JsonResponse
