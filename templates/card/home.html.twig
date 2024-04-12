@@ -7,6 +7,7 @@
 <div class="inner-container grid-container">
     <div class="sidebar">
         <ul>
+            <li><a href="{{ path('card') }}">Start</a></li>
             <li><a href="{{ path('deck') }}">Visa hela kortleken</a></li>
             <li><a href="{{ path('shuffle') }}">Blanda och visa kortleken</a></li>
             <li><a href="{{ path('draw') }}">Dra ett kort från kortleken</a></li>
@@ -18,9 +19,11 @@
     <div class="content">
         <h1>Välkommen till Kortspel</h1>
         <p>Här kan du hantera en kortlek på olika sätt. Blanda, visa hela kortleken, dra ett eller flera kort och hantera dina dragningar med session.</p>
-        <a href="{{ asset('img/cards.jpg') }}">
-            <img src="{{ asset('img/cards.jpg') }}" alt="Kortlek" class="image">
-        </a>
+        <h2>UML och översikt av klasstruktur</h2>
+        <p></p>
+
+        <img src="{{ asset('img/cardsUML.jpg') }}" alt="UML" class="image">
     </div>
 </div>
+
 {% endblock %}

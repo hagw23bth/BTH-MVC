@@ -9,7 +9,7 @@ class CardDeck {
         $this->initializeDeck();
     }
 
-    private function initializeDeck() {
+    public function initializeDeck() {
         $suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
         foreach ($suits as $suit) {
             for ($value = 1; $value <= 13; $value++) {

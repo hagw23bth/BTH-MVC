@@ -27,12 +27,6 @@ class CardController extends AbstractController
     #[Route("/shuffle", name: "shuffle")]
     public function shuffle(SessionInterface $session): Response //SessionInterface startar session
     {
-        // Kontrollerar att det finns en session
-        // startar session om det inte finns
-        if (!$session->isStarted()) {
-            $session->start();
-        }
-
         // Skapar en ny instans av CardDeck
         $cardDeck = new CardDeck();
     
@@ -62,13 +56,12 @@ class CardController extends AbstractController
             $cards = $deck->getCards();
             $session->set('deck', serialize($cards));
         }
-        
 
         // Dra det första kortet om det finns några kort kvar
-        $drawnCard = array_shift($cards); // Använd array_shift() på den deserialiserade arrayen
+        $drawnCard = array_shift($cards);
 
         // Spara den uppdaterade arrayen av kort (med ett kort mindre) till sessionen
-        $session->set('deck', serialize($cards)); // Kom ihåg att serialisera igen innan du sparar
+        $session->set('deck', serialize($cards));
 
         // Hämta och uppdatera "handen" med det nyligen dragna kortet
         $handSerialized = $session->get('hand');
@@ -126,27 +119,23 @@ class CardController extends AbstractController
         return $this->render('card/draw_number.html.twig', [
             'drawnCards' => $drawnCards,
             'remaining' => $remaining,
-            'maxDraw' => $remaining // Använd $remaining som maxDraw för att hålla dem synkroniserade
+            'maxDraw' => $remaining
         ]);
     }
 
+    // Route för att visa innehåll i session
     #[Route("/session", name: "session")]
     public function showSession(SessionInterface $session): Response
     {
-        // Hämtar alla sessionens data
         $sessionData = $session->all();
-
-        // Skickar sessionens data till vyn
         return $this->render('card/session.html.twig', ['sessionData' => $sessionData]);
     }
 
+    // Route för att radera session
     #[Route("/session/delete", name: "session_delete")]
     public function deleteSession(SessionInterface $session): Response
     {
-        // Radera sessionens innehåll
         $session->clear();
-
-        // Använd en flash message för att meddela användaren att sessionen har raderats
         $this->addFlash('success', 'Sessionen har raderats.');
 
         return $this->redirectToRoute('session');

@@ -38,34 +38,62 @@ class ControllerTwig extends AbstractController
         return $this->render('report.html.twig');
     }
 
+    // Route to show API routes
     #[Route("/api", name: "api")]
     public function api(): Response
     {
         $apiRoutes = [
             [
-                'title' => 'Daily Quote',
+                'title' => 'Quote',
                 'path' => '/api/quote',
-                'description' => 'Returns a random quote along with the current date and timestamp.'
-            ]
+                'name' => 'api_quote',
+                'method' => 'GET',
+                'description' => (
+                    'Retunerar ett JSON svar som innehåller dagens citat, 
+                    dagens datum och en tidsstämpel för när svaret genererades.'
+                )
+            ],
+            [
+                'title' => 'Deck',
+                'path' => '/api/deck',
+                'name' => 'api_deck',
+                'method' => 'GET',
+                'description' => 'Returnerar en JSON-struktur med hela kortleken sorterad per färg och värde.'
+            ],
+            [
+                'title' => 'Shuffle Deck',
+                'path' => '/api/deck/shuffle',
+                'name' => 'api_deck_shuffle',
+                'method' => 'POST',
+                'description' => (
+                    'Blandar kortleken och returnerar den som en JSON-struktur. 
+                    Den blandade kortleken sparas i sessionen.'
+                )
+            ], // TESTA (bash): curl -c cookies.txt -X POST http://localhost:8080/api/deck/shuffle
+            [
+                'title' => 'Draw',
+                'path' => '/api/deck/draw',
+                'name' => 'api_deck_draw',
+                'method' => 'POST',
+                'description' => (
+                    'Drar 1 kort från kortleken och visar upp dem i en JSON struktur.
+                    Visar även antalet kort som är kvar i kortleken.
+                    Kortleken sparas i sessionen'
+                )
+            ], // TESTA (bash): curl -b cookies.txt -X POST http://localhost:8080/api/deck/draw
+            [
+                'title' => 'Draw Multiple Cards',
+                'path' => '/api/deck/draw/{number}',
+                'name' => 'api_draw_number',
+                'method' => 'POST',
+                'description' => (
+                    'Drar ett antal (:number) kort från kortleken och visar upp dem i en JSON struktur.
+                    Visar även antalet kort som är kvar i kortleken.
+                    Kortleken sparas i sessionen'
+                )            
+            ] // TESTA (bash): curl -X POST http://localhost:8080/api/deck/draw/3
         ];
 
         return $this->render('api.html.twig', ['apiRoutes' => $apiRoutes]);
-    }
-
-    #[Route("/api/quote", name: "quote")]
-    public function quote(): JsonResponse
-    {
-        $quotes = [
-            "The way to get started is to quit talking and begin doing. - Walt Disney",
-            "Life is what happens when you're busy making other plans. - John Lennon",
-            "The future belongs to those who believe in the beauty of their dreams. - Eleanor Roosevelt",
-        ];
-        $quote = $quotes[array_rand($quotes)];
-
-        return $this->json([
-            'date' => date('Y-m-d'),
-            'timestamp' => time(),
-            'daily_quote' => $quote
-        ]);
     }
 }

@@ -9,11 +9,16 @@
     <p>Below are the JSON routes available in this application:</p>
     <ul>
         {% for route in apiRoutes %}
-        <li>
-            <strong>{{ route.title }}:</strong> {{ route.path }}
-            <br>
-            Description: {{ route.description }}
-        </li>
+            <li>
+                <strong>{{ route.title }}:</strong>
+                {% if route.method == 'GET' %}
+                    <a href="{{ path(route.name) }}" target="_blank">{{ route.path }}</a>
+                {% else %}
+                    {{ route.path }} - {{ route.method }}
+                {% endif %}
+                <br>
+                {{ route.description }}
+            </li>
         {% endfor %}
     </ul>
 </div>

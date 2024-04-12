@@ -22,4 +22,11 @@ class Card {
     public function __toString() {
         return $this->getValue() . ' of ' . $this->getSuit();
     }
+
+    public function toArray(): array {
+        return [
+            'suit' => $this->suit,
+            'value' => $this->value
+        ];
+    }
 }
