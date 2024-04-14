@@ -2,8 +2,10 @@
 
 namespace App\Card;
 
-class CardGraphic extends Card {
-    public function getGraphic(): string {
+class CardGraphic extends Card
+{
+    public function getGraphic(): string
+    {
         $suits = [
             'Hearts' => '♥',
             'Spades' => '♠',

@@ -90,7 +90,7 @@ class ControllerTwig extends AbstractController
                     'Drar ett antal (:number) kort från kortleken och visar upp dem i en JSON struktur.
                     Visar även antalet kort som är kvar i kortleken.
                     Kortleken sparas i sessionen'
-                )            
+                )
             ] // TESTA (bash): curl -X POST http://localhost:8080/api/deck/draw/3
         ];
 

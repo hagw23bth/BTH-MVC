@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controller;
+
 use App\Card\CardDeck;
 use App\Card\Card;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -10,7 +11,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
-class APIController extends AbstractController 
+class APIController extends AbstractController
 {
     // API route som visar ett dagligt citat
     #[Route("/api/quote", name: "api_quote", methods: ["GET"])]
@@ -32,46 +33,48 @@ class APIController extends AbstractController
 
     // API route som returnerar hela kortleken sorterad per färg och värde
     #[Route("/api/deck", name: "api_deck", methods: ["GET"])]
-    public function getDeck(): JsonResponse {
+    public function getDeck(): JsonResponse
+    {
         $deck = new CardDeck();
         $deck->initializeDeck(); // Skapar och fyller kortleken
         $deck->sortDeck(); // Sorterar kortleken
-    
+
         // Konvertera varje kort i kortleken till en array
         $cardsArray = array_map(function ($card) {
             return $card->toArray();
         }, $deck->getCards());
-    
+
         return $this->json([
             'deck' => $cardsArray
         ]);
     }
 
-    // Blandar kortleken och returnerar den som en JSON-struktur. 
+    // Blandar kortleken och returnerar den som en JSON-struktur.
     // Den blandade kortleken sparas i sessionen.
     #[Route('/api/deck/shuffle', name: 'api_deck_shuffle', methods: ['POST'])]
-    public function shuffleDeck(SessionInterface $session): JsonResponse {    
+    public function shuffleDeck(SessionInterface $session): JsonResponse
+    {
         if (!$session->isStarted()) {
             $session->start();
         }
 
         // Skapar en ny instans av CardDeck
         $cardDeck = new CardDeck();
-        
+
         // Blandar denna instans
         $cardDeck->shuffleDeck();
-    
+
         // Sparar den blandade kortleken till session
         $session->set('deck', serialize($cardDeck->getCards()));
-        
+
         // Hämtar den blandade kortleken från session och deserialiserar den för att skicka som JSON
         $cards = unserialize($session->get('deck'));
-    
+
         // Konvertera kortleken till en array som kan serialiseras till JSON
         $cardsArray = array_map(function ($card) {
             return $card->toArray();
         }, $cards);
-    
+
         // Returnerar den blandade kortleken som JSON
         return $this->json([
             'deck' => $cardsArray
@@ -82,7 +85,8 @@ class APIController extends AbstractController
     // Visar även antalet kort som är kvar i kortleken.
     // Kortleken sparas i sessionen
     #[Route('/api/deck/draw', name: 'api_deck_draw', methods: ['POST'])]
-    public function drawCard(SessionInterface $session): JsonResponse {
+    public function drawCard(SessionInterface $session): JsonResponse
+    {
         if (!$session->isStarted()) {
             $session->start();
         }
@@ -115,23 +119,24 @@ class APIController extends AbstractController
     // Visar även antalet kort som är kvar i kortleken.
     // Kortleken sparas i sessionen
     #[Route('/api/deck/draw/{number}', name: 'api_deck_draw_number', methods: ['POST'])]
-    public function drawMultipleCards(SessionInterface $session, int $number): JsonResponse {
+    public function drawMultipleCards(SessionInterface $session, int $number): JsonResponse
+    {
         if (!$session->has('deck')) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         $cards = unserialize($session->get('deck'));
-        if (count($cards) < $number) {                
+        if (count($cards) < $number) {
             return $this->json(['error' => 'Inte tillräckligt med kort att dra.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         $drawnCards = [];
-        for ($i = 0; $i < $number; $i++) {                
+        for ($i = 0; $i < $number; $i++) {
             $drawnCards[] = array_shift($cards)->toArray();
         }
-    
+
         $session->set('deck', serialize($cards));
-    
+
         return $this->json([
             'drawnCards' => $drawnCards,
             'remaining' => count($cards)

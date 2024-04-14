@@ -20,9 +20,15 @@
         <h1>Välkommen till Kortspel</h1>
         <p>Här kan du hantera en kortlek på olika sätt. Blanda, visa hela kortleken, dra ett eller flera kort och hantera dina dragningar med session.</p>
         <h2>UML och översikt av klasstruktur</h2>
-        <p></p>
+        <p>Jag har valt att bygga upp min kod runt följande klasser:</p>
+        <ul>
+            <li><strong>Card: </strong>Denna bas-klass representerar ett enskilt kort och innehåller egenskaper för färg (suit) och värde (value).</li>
+            <li><strong>CardDeck: </strong>Ärver från Card och utökar den med funktionalitet för att ge en grafisk representation av kortet, vilket gör det möjligt att visualisera kortet som hjärter, spader, och så vidare.</li>
+            <li><strong>CardGraphic: </strong>Denna klass hanterar en samling av Card-objekt, vilket i praktiken innebär instanser av CardGraphic. Detta illustrerar en kompositionsförhållande, mellan CardDeck och Card. Klassen innehåller metoder för att skapa en kortlek, blanda, sortera, och dra kort från kortleken. </li>
+        </ul>
+        <p>Jag har utgått från hur kraven varit formulerade och har hittills inte märkt ett behov av en CardHand. Men om spelet ska utvecklas vidare kommer nog en sådan klass kännas aktuell.</p>
 
-        <img src="{{ asset('img/cardsUML.jpg') }}" alt="UML" class="image">
+        <img src="{{ asset('img/CardUML.png') }}" alt="UML" class="image">
     </div>
 </div>
 

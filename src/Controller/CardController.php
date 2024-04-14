@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Controller;
+
 use App\Card\CardDeck;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -19,8 +21,8 @@ class CardController extends AbstractController
     public function deck(): Response
     {
         $cardDeck = new CardDeck();
-        $cardDeck->sortDeck();  
-        
+        $cardDeck->sortDeck();
+
         return $this->render('card/show_deck.html.twig', ['deck' => $cardDeck->getCards()]);
     }
 
@@ -29,23 +31,24 @@ class CardController extends AbstractController
     {
         // Skapar en ny instans av CardDeck
         $cardDeck = new CardDeck();
-    
+
         // Blandar denna instans
         $cardDeck->shuffleDeck();
 
         // Sparar den blandade kortleken till session
         $session->set('deck', serialize($cardDeck->getCards()));
-    
+
         // Hämtar den blandade kortleken från session
         $deck = unserialize($session->get('deck'));
-    
+
         // Skickar den blandade kortleken till template
         return $this->render('card/show_deck.html.twig', ['deck' => $deck]);
     }
 
 
     #[Route("/card/deck/draw", name: "draw")]
-    public function draw(SessionInterface $session): Response {
+    public function draw(SessionInterface $session): Response
+    {
         if ($session->has('deck')) {
             // Om en serialiserad kortlek finns i sessionen, deserialisera den
             $cards = unserialize($session->get('deck'));
@@ -83,7 +86,8 @@ class CardController extends AbstractController
     }
 
     #[Route("/card/deck/draw/number", name: "draw_number")]
-    public function drawNumber(Request $request, SessionInterface $session): Response {
+    public function drawNumber(Request $request, SessionInterface $session): Response
+    {
         // Säkerställ att en kortlek finns tillgänglig
         if (!$session->has('deck')) {
             $deck = new CardDeck();
