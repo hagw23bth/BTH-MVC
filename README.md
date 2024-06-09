@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div align="center">
   
   <img src="app/public/img/profilecircle.png" alt="Bild på mig" width="100">
@@ -94,3 +95,6 @@ https://github.com/dbwebb-se/mvc
 
 ## Mitt repo på Github 
 https://github.com/hagw23bth/BTH-MVC/tree/master
+=======
+# BTH-MVC
+>>>>>>> origin/main
