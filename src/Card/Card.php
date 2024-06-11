@@ -4,8 +4,8 @@ namespace App\Card;
 
 class Card
 {
-    private $suit;
-    private $value;
+    private string $suit;
+    private int $value;
 
     public function __construct(string $suit, int $value)
     {
@@ -23,11 +23,14 @@ class Card
         return $this->value;
     }
 
-    public function __toString()
+    public function __toString(): string
     {
         return $this->getValue() . ' of ' . $this->getSuit();
     }
 
+    /**
+     * @return array<string, int|string>
+     */
     public function toArray(): array
     {
         return [

@@ -4,14 +4,20 @@ namespace App\Card;
 
 class CardDeck
 {
-    private $cards = [];
+    /**
+     * @var CardGraphic[]
+     */
+    private array $cards = [];
 
     public function __construct()
     {
         $this->initializeDeck();
     }
 
-    public function initializeDeck()
+    /**
+     * Initialized deck of 52 cards.
+     */
+    public function initializeDeck(): void
     {
         $suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
         foreach ($suits as $suit) {
@@ -21,14 +27,18 @@ class CardDeck
         }
     }
 
-    // Metod som blandar kortleken
-    public function shuffleDeck()
+    /**
+     * Shuffles the deck.
+     */
+    public function shuffleDeck(): void
     {
         shuffle($this->cards);
     }
 
-    // Metod som sorterar kortleken
-    public function sortDeck()
+    /**
+     * Sorts the deck.
+     */    
+    public function sortDeck(): void
     {
         usort($this->cards, function ($cardA, $cardB) {
             $suits = ['Clubs' => 0, 'Diamonds' => 1, 'Hearts' => 2, 'Spades' => 3];
@@ -39,14 +49,23 @@ class CardDeck
         });
     }
 
-    // Metod som retunerar korten i kortleken
+    /**
+     * Gets the current state of the deck.
+     *
+     * @return CardGraphic[]
+     */
     public function getCards(): array
     {
         return $this->cards; // Returnerar kortleken i dess nuvarande tillstånd
     }
 
-    // Metod som tar bort och returnerar det första elementet från kortleken
-    public function drawCard()
+        
+    /**
+     * Draws and seperates the first card of the deck.
+     *
+     * @return CardGraphic|null
+     */
+    public function drawCard(): ?CardGraphic
     {
         return array_shift($this->cards);
     }
