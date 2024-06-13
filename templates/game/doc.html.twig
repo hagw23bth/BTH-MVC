@@ -13,6 +13,63 @@
     </div>
     <div class="content">
         <h1>Samlad dokumentation</h1>
+        <p>Här kan du ta del av dokumentation kring spelets uppbyggnad.</p>
+
+        <h2>Flödesschema</h2>
+        <img src="{{ asset('img/flowchart.png') }}" alt="Flödesschema för kortspelet 21" class="image">
+
+        <h2>Pseudokod:</h2>
+        <pre>
+        <code>
+        STARTA SPELET
+            Initiera kortleken och blanda den
+            Använd: CardDeck::shuffleDeck()
+
+        WHILE spelet inte är över
+            SPELARENS TUR
+                WHILE spelaren inte har stannat och spelarens poäng <= 21
+                    "Vill du dra ett kort eller stanna på nuvarande poäng?"
+                    Skriv ut nuvarande summa.
+                    IF spelaren väljer att dra ett kort
+                        Spelaren drar ett kort från kortleken
+                        Använd: CardDeck::drawCard()
+                        Uppdatera spelarens poäng
+                        IF spelarens poäng > 21
+                            Banken vinner
+                            Avsluta spelet
+                    ELSE
+                        Spelaren stannar
+                        Avsluta spelarens tur
+
+            IF spelarens poäng <= 21
+                BANKENS TUR
+                    WHILE bankens poäng < 17 och bankens poäng <= 21
+                        Banken drar ett kort från kortleken
+                        Använd: CardDeck::drawCard()
+                        Uppdatera bankens poäng
+                        IF bankens poäng > 21
+                            Spelaren vinner
+                            Avsluta spelet
+
+            IF båda har stannat eller båda har fått över 21 poäng
+                SPELET AVGÖRS
+                IF spelarens poäng > bankens poäng och spelarens poäng <= 21
+                    Spelaren vinner
+                ELSE
+                    Banken vinner
+                Avsluta spelet
+        </code>
+        </pre>
+
+        <h2>Klassbeskrivningar:</h2>
+        <ul>
+            <li><strong>GameController:</strong> Hanterar spelets flöde, spelarens handlingar och bankens handlingar.</li>
+            <li><strong>Player:</strong> Klass som representerar spelaren. Håller spelarens hand och poäng.</li>
+            <li><strong>Bank:</strong> Klass som representerar banken. Håller bankens hand och poäng.</li>
+            <li><strong>Card: </strong>Denna bas-klass representerar ett enskilt kort och innehåller egenskaper för färg (suit) och värde (value).</li>
+            <li><strong>CardDeck: </strong>Ärver från Card och utökar den med funktionalitet för att ge en grafisk representation av kortet, vilket gör det möjligt att visualisera kortet som hjärter, spader, och så vidare.</li>
+            <li><strong>CardGraphic: </strong>Denna klass hanterar en samling av Card-objekt, vilket i praktiken innebär instanser av CardGraphic. Detta illustrerar en kompositionsförhållande, mellan CardDeck och Card. Klassen innehåller metoder för att skapa en kortlek, blanda, sortera, och dra kort från kortleken. </li>
+        </ul>
     </div>
 </div>
 
