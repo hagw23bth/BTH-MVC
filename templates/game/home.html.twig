@@ -1,6 +1,6 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Spela{% endblock %}
+{% block title %}Kortspelet 21{% endblock %}
 
 {% block body %}
 
@@ -12,12 +12,13 @@
         </ul>
     </div>
     <div class="content">
-        <h1>Välkommen att spela kortspelet 21!</h1>
-        <p>Här kan du ta del av information om spelet eller starta ett nytt spel.</p>
-        <a href="{{ path('doc') }}">Regler</a>
-        <a href="{{ path('doc') }}">Dokumentation</a>
-        <a href="{{ path('doc') }}">Börja spela!</a>
-
+        <h1>Välkommen till kortspelet 21!</h1>
+        <p>Här ska du dra kort från en blandand kortlek och försöka uppnå en så hög poäng som möjligt utan att överstiga 21. Ess kan räknas antingen som 1 eller 14 poäng, övriga klädda kort är värda 11-13 poäng och numrerade kort har sitt siffervärde.</p>
+        <ul>
+            <li><a href="{{ path('doc') }}">Regler</a></li>
+            <li><a href="{{ path('doc') }}">Dokumentation</a></li>
+            <li><a href="{{ path('play') }}">Starta spelet!</a></li>
+        </ul>
     </div>
 </div>
 
