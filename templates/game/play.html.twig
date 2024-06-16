@@ -14,6 +14,47 @@
         </div>
         <div class="content">
             <h1>Spela kortspelet 21</h1>
+            <div id="player-status">
+                <h2>Din hand</h2>
+                <ul>
+                    {% for card in player.getHand() %}
+                        <div class="card {{ card.getSuit() in ['Hearts', 'Diamonds'] ? 'red' : '' }}">
+                            {{ card.getGraphic() }}
+                        </div>                        
+                    {% endfor %}
+                </ul>
+                <p>Din poäng: {{ player.getScore() }}</p>
+            </div>
+
+            <div id="game-controls">
+                {% if not game_over %}
+                    {% if player_turn %}
+                        <p> Vill du stanna på nuvarande poäng eller dra fler kort?
+                        <a href="{{ path('game_draw_card') }}" class="btn btn-primary">Dra kort</a>
+                        <a href="{{ path('game_pass') }}" class="btn btn-warning">Stanna</a>
+                    {% endif %}
+                {% endif %}
+            </div>
+
+            <div id="bank-status">
+                <h2>Bankens hand</h2>
+                <ul>
+                    {% for card in bank.getHand() %}
+                        <div class="card {{ card.getSuit() in ['Hearts', 'Diamonds'] ? 'red' : '' }}">
+                            {{ card.getGraphic() }}
+                        </div>                     
+                    {% endfor %}
+                </ul>
+                <p>Bankens poäng: {{ bank.getScore() }}</p>
+            </div>
+
+            {% if game_over %}
+                <div id="game-result">
+                    <h2>Spelet är avgjort!</h2>
+                    <p>{{ result_message }}</p>
+                </div>
+            {% endif %}
+            <a href="{{ path('game_restart') }}" class="btn btn-secondary">Starta nytt spel!</a>
         </div>
     </div>
 {% endblock %}
