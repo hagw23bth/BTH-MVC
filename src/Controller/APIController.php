@@ -78,8 +78,8 @@ class APIController extends AbstractController
         $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
         if (!is_array($cards)) {
             return $this->json(['error' => 'Failed to unserialize the deck.'], Response::HTTP_INTERNAL_SERVER_ERROR);
-        } 
-    
+        }
+
         // Konvertera kortleken till en array som kan serialiseras till JSON
         $cardsArray = array_map(function ($card) {
             return $card->toArray();
@@ -100,7 +100,7 @@ class APIController extends AbstractController
         if (!$session->isStarted()) {
             $session->start();
         }
-    
+
         if ($session->has('deck')) {
             // Om en serialiserad kortlek finns i sessionen, deserialisera den
             $deckData = $session->get('deck');
@@ -115,20 +115,20 @@ class APIController extends AbstractController
             // Om ingen kortlek finns, returnera ett felmeddelande
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         if (empty($cards)) {
             return $this->json(['error' => 'Inga fler kort att dra.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         // Dra det översta kortet, kontrollera att $cards är en array
         $drawnCard = array_shift($cards);
         if (!$drawnCard instanceof Card) {
             return $this->json(['error' => 'Fel vid dragning av kort.'], Response::HTTP_INTERNAL_SERVER_ERROR);
         }
-    
+
         // Spara den uppdaterade kortleken tillbaka i sessionen
         $session->set('deck', serialize($cards));
-    
+
         return $this->json([
             'drawnCard' => $drawnCard->toArray(),
             'remaining' => count($cards)
@@ -144,23 +144,23 @@ class APIController extends AbstractController
         if (!$session->has('deck')) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         // Kontrollera att sessionens värde är en sträng innan unserialize
         $deckData = $session->get('deck');
         if (!is_string($deckData)) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         // Om en serialiserad kortlek finns i sessionen, deserialisera den
         $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
         if (!is_array($cards)) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         if (count($cards) < $number) {
             return $this->json(['error' => 'Inte tillräckligt med kort att dra.'], Response::HTTP_BAD_REQUEST);
         }
-    
+
         $drawnCards = [];
         for ($i = 0; $i < $number; $i++) {
             // Dra det översta kortet, kontrollera att $cards är en array
@@ -170,10 +170,10 @@ class APIController extends AbstractController
             }
             $drawnCards[] = $drawnCard->toArray();
         }
-    
+
         // Spara den uppdaterade kortleken tillbaka i sessionen
         $session->set('deck', serialize($cards));
-    
+
         return $this->json([
             'drawnCards' => $drawnCards,
             'remaining' => count($cards)

@@ -37,7 +37,7 @@ class CardDeck
 
     /**
      * Sorts the deck.
-     */    
+     */
     public function sortDeck(): void
     {
         usort($this->cards, function ($cardA, $cardB) {
@@ -59,7 +59,7 @@ class CardDeck
         return $this->cards; // Returnerar kortleken i dess nuvarande tillstånd
     }
 
-        
+
     /**
      * Draws and seperates the first card of the deck.
      *

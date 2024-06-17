@@ -34,10 +34,10 @@ class GameController extends AbstractController
         if (!$session->has('deck')) {
             $deck = new CardDeck();
             $deck->shuffleDeck();
-            
+
             $player = new Player();
             $bank = new Bank();
-                
+
             $session->set('deck', serialize($deck));
             $session->set('player', serialize(new Player()));
             $session->set('bank', serialize(new Bank()));
@@ -123,5 +123,5 @@ class GameController extends AbstractController
 
         return $this->redirectToRoute('game_play');
     }
-    
+
 }

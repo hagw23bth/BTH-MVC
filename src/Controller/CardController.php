@@ -33,13 +33,13 @@ class CardController extends AbstractController
     {
         // Skapar en ny instans av CardDeck
         $cardDeck = new CardDeck();
-    
+
         // Blandar denna instans
         $cardDeck->shuffleDeck();
-    
+
         // Sparar den blandade kortleken till session
         $session->set('deck', serialize($cardDeck->getCards()));
-    
+
         // Hämtar den blandade kortleken från session
         $deckData = $session->get('deck');
         if (!is_string($deckData)) {
@@ -49,7 +49,7 @@ class CardController extends AbstractController
         if (!is_array($deck)) {
             return $this->render('card/show_deck.html.twig', ['deck' => []]);
         }
-    
+
         // Skickar den blandade kortleken till template
         return $this->render('card/show_deck.html.twig', ['deck' => $deck]);
     }
