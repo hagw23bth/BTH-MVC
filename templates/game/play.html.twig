@@ -30,8 +30,8 @@
                 {% if not game_over %}
                     {% if player_turn %}
                         <p> Vill du stanna på nuvarande poäng eller dra fler kort?
-                        <a href="{{ path('game_draw_card') }}" class="btn btn-primary">Dra kort</a>
-                        <a href="{{ path('game_pass') }}" class="btn btn-warning">Stanna</a>
+                        <a href="{{ path('game_draw_card') }}">Dra kort</a>
+                        <a href="{{ path('game_pass') }}">Stanna</a>
                     {% endif %}
                 {% endif %}
             </div>
@@ -54,7 +54,7 @@
                     <p>{{ result_message }}</p>
                 </div>
             {% endif %}
-            <a href="{{ path('game_restart') }}" class="btn btn-secondary">Starta nytt spel!</a>
+            <a href="{{ path('game_restart') }}">Starta nytt spel!</a>
         </div>
     </div>
 {% endblock %}

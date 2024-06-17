@@ -178,6 +178,35 @@ class APIController extends AbstractController
             'remaining' => count($cards)
         ]);
     }
+
+    #[Route('/api/game', name: 'api_game_status', methods: ['GET'])]
+    public function gameStatus(SessionInterface $session): JsonResponse
+    {
+        // Hämta spelstatus från sessionen
+        $deck = $session->get('deck');
+        $player = $session->get('player');
+        $bank = $session->get('bank');
+        $gameOver = $session->get('game_over');
+        $playerTurn = $session->get('player_turn');
+
+        // Kontrollera om spelet är initierat
+        if (!$deck || !$player || !$bank) {
+            return $this->json([
+                'error' => 'Spelet är inte initierat',
+            ]);
+        }
+
+        // Bygg upp spelstatus som en JSON-struktur
+        $gameStatus = [
+            'deck' => $deck,
+            'player' => unserialize($player),
+            'bank' => unserialize($bank),
+            'game_over' => $gameOver,
+            'player_turn' => $playerTurn,
+        ];
+
+        return $this->json($gameStatus);
+    }
 }
 
 // Testar ovanstående API routes med curl

@@ -91,7 +91,16 @@ class ControllerTwig extends AbstractController
                     Visar även antalet kort som är kvar i kortleken.
                     Kortleken sparas i sessionen'
                 )
-            ] // TESTA (bash): curl -X POST http://localhost:8080/api/deck/draw/3
+                ], // TESTA (bash): curl -X POST http://localhost:8080/api/deck/draw/3
+                [
+                    'title' => 'Game Status',
+                    'path' => '/api/game',
+                    'name' => 'api_game_status',
+                    'method' => 'GET',
+                    'description' => (
+                        'Visar den aktuella ställningen för spelet i en JSON-struktur.'
+                    )
+                ]
         ];
 
         return $this->render('api.html.twig', ['apiRoutes' => $apiRoutes]);
