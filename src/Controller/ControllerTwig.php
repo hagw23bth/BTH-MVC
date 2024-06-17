@@ -84,7 +84,7 @@ class ControllerTwig extends AbstractController
             [
                 'title' => 'Draw Multiple Cards',
                 'path' => '/api/deck/draw/{number}',
-                'name' => 'api_draw_number',
+                'name' => 'api_deck_draw_number',
                 'method' => 'POST',
                 'description' => (
                     'Drar ett antal (:number) kort från kortleken och visar upp dem i en JSON struktur.

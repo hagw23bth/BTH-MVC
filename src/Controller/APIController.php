@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Card\CardDeck;
 use App\Card\Card;
+use App\Card\CardGraphic;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -74,7 +75,7 @@ class APIController extends AbstractController
         }
 
         // Använd allowed_classes-parametern för unserialize för att säkerställa att endast Card-klassen deserialiseras
-        $cards = unserialize($deckData, ['allowed_classes' => [Card::class]]);
+        $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
         if (!is_array($cards)) {
             return $this->json(['error' => 'Failed to unserialize the deck.'], Response::HTTP_INTERNAL_SERVER_ERROR);
         } 
@@ -106,7 +107,7 @@ class APIController extends AbstractController
             if (!is_string($deckData)) {
                 return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
             }
-            $cards = unserialize($deckData, ['allowed_classes' => [Card::class]]);
+            $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
             if (!is_array($cards)) {
                 return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
             }
@@ -151,7 +152,7 @@ class APIController extends AbstractController
         }
     
         // Om en serialiserad kortlek finns i sessionen, deserialisera den
-        $cards = unserialize($deckData, ['allowed_classes' => [Card::class]]);
+        $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
         if (!is_array($cards)) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
