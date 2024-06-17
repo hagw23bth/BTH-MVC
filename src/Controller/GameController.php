@@ -3,15 +3,12 @@
 namespace App\Controller;
 
 use App\Card\CardDeck;
-use App\Card\Card;
-use App\Card\CardGraphic;
 use App\Game\Player;
 use App\Game\Bank;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
-use Symfony\Component\HttpFoundation\Request;
 
 class GameController extends AbstractController
 {
@@ -35,27 +32,27 @@ class GameController extends AbstractController
             $deck = new CardDeck();
             $deck->shuffleDeck();
 
-            $player = new Player();
-            $bank = new Bank();
-
-            $session->set('deck', serialize($deck));
-            $session->set('player', serialize(new Player()));
-            $session->set('bank', serialize(new Bank()));
+            $session->set('deck', $deck);
+            $session->set('player', new Player());
+            $session->set('bank', new Bank());
             $session->set('game_over', false);
             $session->set('player_turn', true);
         }
 
-        // Hämta objekten från sessionen
-        $deck = unserialize($session->get('deck'));
-        $player = unserialize($session->get('player'));
-        $bank = unserialize($session->get('bank'));
+        // Hämta objekten från sessionen direkt
+        $deck = $session->get('deck');
+        $player = $session->get('player');
+        $bank = $session->get('bank');
         $gameOver = $session->get('game_over');
         $playerTurn = $session->get('player_turn');
 
         if (!$gameOver && !$playerTurn) {
             // Bankens tur att spela
             while ($bank->getScore() < 17) {
-                $bank->addCard($deck->drawCard());
+                $card = $deck->drawCard();
+                if ($card) {
+                    $bank->addCard($card);
+                }
             }
 
             $playerScore = $player->getScore();
@@ -65,27 +62,16 @@ class GameController extends AbstractController
 
             if ($bankScore > 21 || $playerScore > $bankScore) {
                 $session->set('result_message', 'Du vann!');
-                $session->set('deck', serialize($deck));
-                $session->set('player', serialize($player));
-                $session->set('bank', serialize($bank));
-    
-                return $this->redirectToRoute('game_play');
-            }
-    
-            if ($playerScore < $bankScore) {
+            } elseif ($playerScore < $bankScore) {
                 $session->set('result_message', 'Banken vann!');
-                $session->set('deck', serialize($deck));
-                $session->set('player', serialize($player));
-                $session->set('bank', serialize($bank));
-    
-                return $this->redirectToRoute('game_play');
+            } else {
+                $session->set('result_message', 'Det blev oavgjort!');
             }
-    
-            $session->set('result_message', 'Det blev oavgjort!');
-            $session->set('deck', serialize($deck));
-            $session->set('player', serialize($player));
-            $session->set('bank', serialize($bank));
-    
+
+            $session->set('deck', $deck);
+            $session->set('player', $player);
+            $session->set('bank', $bank);
+
             return $this->redirectToRoute('game_play');
         }
 
@@ -102,10 +88,13 @@ class GameController extends AbstractController
     #[Route('/game/draw-card', name: 'game_draw_card')]
     public function drawCard(SessionInterface $session): Response
     {
-        $deck = unserialize($session->get('deck'));
-        $player = unserialize($session->get('player'));
+        $deck = $session->get('deck');
+        $player = $session->get('player');
 
-        $player->addCard($deck->drawCard());
+        $card = $deck->drawCard();
+        if ($card) {
+            $player->addCard($card);
+        }
 
         if ($player->getScore() > 21) {
             $session->set('game_over', true);
@@ -113,8 +102,8 @@ class GameController extends AbstractController
             $session->set('player_turn', false);
         }
 
-        $session->set('deck', serialize($deck));
-        $session->set('player', serialize($player));
+        $session->set('deck', $deck);
+        $session->set('player', $player);
 
         return $this->redirectToRoute('game_play');
     }
@@ -134,5 +123,4 @@ class GameController extends AbstractController
 
         return $this->redirectToRoute('game_play');
     }
-
 }

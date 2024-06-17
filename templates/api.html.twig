@@ -3,7 +3,6 @@
 {% block title %}API Overview{% endblock %}
 
 {% block body %}
-
 <div class="inner-container">
     <h1>API Overview</h1>
     <p>Below are the JSON routes available in this application:</p>
@@ -15,10 +14,10 @@
                     <a href="{{ path(route.name) }}" target="_blank">{{ route.path }}</a>
                 {% else %}
                     {{ route.path }} - {{ route.method }}
-                    <form method="post" action="{{ path(route.name, route.name == 'api_deck_draw_number' ? {'number': 1} : {} ) }}">
+                    <form method="post" action="{{ path(route.name) }}">
                         {% if route.name == 'api_deck_draw_number' %}
-                            <label for="number">Number of Cards:</label>
-                            <input type="number" name="number" id="number" value="1" min="1">
+                            <label for="number_{{ loop.index }}">Number of Cards:</label>
+                            <input type="number" name="number" id="number_{{ loop.index }}" value="1" min="1">
                         {% endif %}
                         <input type="submit" value="Test {{ route.title }}">
                     </form>

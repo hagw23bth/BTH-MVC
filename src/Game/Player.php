@@ -6,14 +6,8 @@ use App\Card\Card;
 
 class Player
 {
-    private $hand = [];
-    private $score = 0;
-
-    public function addCard(Card $card): void
-    {
-        $this->hand[] = $card;
-        $this->updateScore($card);
-    }
+    private array $hand = [];
+    private int $score = 0;
 
     public function getHand(): array
     {
@@ -25,8 +19,14 @@ class Player
         return $this->score;
     }
 
-    private function updateScore(Card $card): void
+    public function addCard(Card $card): void
     {
+        $this->hand[] = $card;
         $this->score += $card->getValue();
+    }
+
+    public function drawCard(CardDeck $deck): void
+    {
+        $this->addCard($deck->drawCard());
     }
 }
