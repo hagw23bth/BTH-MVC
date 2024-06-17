@@ -14,7 +14,7 @@
                     <a href="{{ path(route.name) }}" target="_blank">{{ route.path }}</a>
                 {% else %}
                     {{ route.path }} - {{ route.method }}
-                    <form method="post" action="{{ path(route.name) }}">
+                    <form method="post" action="{{ route.name == 'api_deck_draw_number' ? path(route.name, {'number': 1}) : path(route.name) }}">
                         {% if route.name == 'api_deck_draw_number' %}
                             <label for="number_{{ loop.index }}">Number of Cards:</label>
                             <input type="number" name="number" id="number_{{ loop.index }}" value="1" min="1">

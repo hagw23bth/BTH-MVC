@@ -3,13 +3,13 @@
 namespace App\Controller;
 
 use App\Card\CardDeck;
-use App\Card\Card;
 use App\Card\CardGraphic;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 
 class APIController extends AbstractController
 {
@@ -93,9 +93,14 @@ class APIController extends AbstractController
     }
 
     #[Route('/api/deck/draw/{number}', name: 'api_deck_draw_number', methods: ['POST'])]
-    public function drawMultipleCards(Request $request, SessionInterface $session, int $number = 1): JsonResponse
+    public function drawMultipleCards(Request $request, SessionInterface $session, int $number): JsonResponse
     {
+        // Ta emot 'number' från POST-data
         $number = $request->request->getInt('number', $number);
+
+        if (!$session->has('deck')) {
+            return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
+        }
 
         $deck = $session->get('deck');
         if (!$deck instanceof CardDeck) {
@@ -107,7 +112,7 @@ class APIController extends AbstractController
         }
 
         $drawnCards = [];
-        for ($i = 0; i < $number; $i++) {
+        for ($i = 0; $i < $number; $i++) {
             $drawnCard = $deck->drawCard();
             if (!$drawnCard instanceof CardGraphic) {
                 return $this->json(['error' => 'Fel vid dragning av kort.'], Response::HTTP_INTERNAL_SERVER_ERROR);
@@ -133,7 +138,7 @@ class APIController extends AbstractController
         $playerTurn = $session->get('player_turn');
 
         if (!$deck || !$player || !$bank) {
-            return $this->json(['error' => 'Spelet är inte initierat']);
+            return $this->json(['error' => 'Currently no game initated']);
         }
 
         return $this->json([
