@@ -61,7 +61,11 @@ class CardController extends AbstractController
 
         $session->set('deck', $deck);
 
+        /** @var CardGraphic[] $hand */
         $hand = $session->get('hand', []);
+        if (!is_array($hand)) {
+            $hand = [];
+        }
         $hand[] = $drawnCard;
         $session->set('hand', $hand);
 
@@ -71,6 +75,7 @@ class CardController extends AbstractController
             'hand' => $hand
         ]);
     }
+
 
     #[Route("/card/deck/draw/number", name: "draw_number")]
     public function drawNumber(Request $request, SessionInterface $session): Response

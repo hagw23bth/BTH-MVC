@@ -3,12 +3,18 @@
 namespace App\Game;
 
 use App\Card\Card;
+use App\Card\CardDeck;
+use App\Card\CardGraphic;
 
 class Bank
 {
+    /** @var Card[] */
     private array $hand = [];
     private int $score = 0;
 
+    /**
+     * @return Card[]
+     */
     public function getHand(): array
     {
         return $this->hand;
@@ -27,6 +33,9 @@ class Bank
 
     public function drawCard(CardDeck $deck): void
     {
-        $this->addCard($deck->drawCard());
+        $card = $deck->drawCard();
+        if ($card instanceof Card) {
+            $this->addCard($card);
+        }
     }
 }

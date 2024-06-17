@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Card\CardDeck;
+use App\Card\CardGraphic;
 use App\Game\Player;
 use App\Game\Bank;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -40,8 +41,11 @@ class GameController extends AbstractController
         }
 
         // Hämta objekten från sessionen direkt
+        /** @var CardDeck $deck */
         $deck = $session->get('deck');
+        /** @var Player $player */
         $player = $session->get('player');
+        /** @var Bank $bank */
         $bank = $session->get('bank');
         $gameOver = $session->get('game_over');
         $playerTurn = $session->get('player_turn');
@@ -50,7 +54,7 @@ class GameController extends AbstractController
             // Bankens tur att spela
             while ($bank->getScore() < 17) {
                 $card = $deck->drawCard();
-                if ($card) {
+                if ($card instanceof CardGraphic) {
                     $bank->addCard($card);
                 }
             }
@@ -88,11 +92,13 @@ class GameController extends AbstractController
     #[Route('/game/draw-card', name: 'game_draw_card')]
     public function drawCard(SessionInterface $session): Response
     {
+        /** @var CardDeck $deck */
         $deck = $session->get('deck');
+        /** @var Player $player */
         $player = $session->get('player');
 
         $card = $deck->drawCard();
-        if ($card) {
+        if ($card instanceof CardGraphic) {
             $player->addCard($card);
         }
 
