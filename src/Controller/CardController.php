@@ -75,14 +75,16 @@ class CardController extends AbstractController
                     'hand' => []
                 ]);
             }
-        } else {
+        }
+    
+        if (!$session->has('deck') || !is_array($cards)) {
             // Om ingen kortlek finns, skapa en ny, blanda den och spara den som en serialiserad array
             $deck = new CardDeck();
             $deck->shuffleDeck();
             $cards = $deck->getCards();
             $session->set('deck', serialize($cards));
         }
-
+    
         // Dra det första kortet om det finns några kort kvar
         $drawnCard = array_shift($cards);
         if (!$drawnCard instanceof CardGraphic) {
@@ -92,27 +94,26 @@ class CardController extends AbstractController
                 'hand' => []
             ]);
         }
-
+    
         // Spara den uppdaterade arrayen av kort (med ett kort mindre) till sessionen
         $session->set('deck', serialize($cards));
-
+    
         // Hämta och uppdatera "handen" med det nyligen dragna kortet
         $handSerialized = $session->get('hand');
-        if (!is_string($handSerialized)) {
-            $hand = [];
-        } else {
+        $hand = [];
+        if (is_string($handSerialized)) {
             $hand = unserialize($handSerialized, ['allowed_classes' => [Card::class, CardGraphic::class]]);
             if (!is_array($hand)) {
                 $hand = [];
             }
         }
-
+    
         // Lägg till det nyligen dragna kortet till handen
         $hand[] = $drawnCard;
-
+    
         // Uppdatera "handen" i sessionen med det nyligen dragna kortet
         $session->set('hand', serialize($hand));
-
+    
         // Skicka det senaste dragna kortet och antalet kvarvarande kort till vyn
         return $this->render('card/draw.html.twig', [
             'drawnCard' => $drawnCard,
@@ -139,6 +140,7 @@ class CardController extends AbstractController
                 'maxDraw' => 0
             ]);
         }
+
         $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
         if (!is_array($cards)) {
             return $this->render('card/draw_number.html.twig', [
@@ -169,14 +171,14 @@ class CardController extends AbstractController
 
         // Uppdatera "handen" i sessionen med de nyligen dragna korten
         $handSerialized = $session->get('hand');
-        if (!is_string($handSerialized)) {
-            $hand = [];
-        } else {
+        $hand = [];
+        if (is_string($handSerialized)) {
             $hand = unserialize($handSerialized, ['allowed_classes' => [Card::class, CardGraphic::class]]);
             if (!is_array($hand)) {
                 $hand = [];
             }
         }
+
         foreach ($drawnCards as $card) {
             $hand[] = $card;
         }

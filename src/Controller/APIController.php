@@ -101,18 +101,17 @@ class APIController extends AbstractController
             $session->start();
         }
 
-        if ($session->has('deck')) {
-            // Om en serialiserad kortlek finns i sessionen, deserialisera den
-            $deckData = $session->get('deck');
-            if (!is_string($deckData)) {
-                return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
-            }
-            $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
-            if (!is_array($cards)) {
-                return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
-            }
-        } else {
-            // Om ingen kortlek finns, returnera ett felmeddelande
+        if (!$session->has('deck')) {
+            return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
+        }
+
+        // Om en serialiserad kortlek finns i sessionen, deserialisera den
+        $deckData = $session->get('deck');
+        if (!is_string($deckData)) {
+            return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
+        }
+        $cards = unserialize($deckData, ['allowed_classes' => [Card::class, CardGraphic::class]]);
+        if (!is_array($cards)) {
             return $this->json(['error' => 'Ingen kortlek finns tillgänglig. Blanda kortleken först.'], Response::HTTP_BAD_REQUEST);
         }
 

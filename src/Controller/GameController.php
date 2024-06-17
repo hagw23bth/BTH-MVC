@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\Request;
 class GameController extends AbstractController
 {
     #[Route("/game", name: "game")]
-    public function gameHome(SessionInterface $session): Response
+    public function gameHome(): Response
     {
         return $this->render('game/home.html.twig');
     }
@@ -65,16 +65,27 @@ class GameController extends AbstractController
 
             if ($bankScore > 21 || $playerScore > $bankScore) {
                 $session->set('result_message', 'Du vann!');
-            } elseif ($playerScore < $bankScore) {
-                $session->set('result_message', 'Banken vann!');
-            } else {
-                $session->set('result_message', 'Det blev oavgjort!');
+                $session->set('deck', serialize($deck));
+                $session->set('player', serialize($player));
+                $session->set('bank', serialize($bank));
+    
+                return $this->redirectToRoute('game_play');
             }
-
+    
+            if ($playerScore < $bankScore) {
+                $session->set('result_message', 'Banken vann!');
+                $session->set('deck', serialize($deck));
+                $session->set('player', serialize($player));
+                $session->set('bank', serialize($bank));
+    
+                return $this->redirectToRoute('game_play');
+            }
+    
+            $session->set('result_message', 'Det blev oavgjort!');
             $session->set('deck', serialize($deck));
             $session->set('player', serialize($player));
             $session->set('bank', serialize($bank));
-
+    
             return $this->redirectToRoute('game_play');
         }
 
