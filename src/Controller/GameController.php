@@ -52,12 +52,7 @@ class GameController extends AbstractController
 
         if (!$gameOver && !$playerTurn) {
             // Bankens tur att spela
-            while ($bank->getScore() < 17) {
-                $card = $deck->drawCard();
-                if ($card instanceof CardGraphic) {
-                    $bank->addCard($card);
-                }
-            }
+            $bank->drawCard($deck);
 
             $playerScore = $player->getScore();
             $bankScore = $bank->getScore();
