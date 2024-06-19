@@ -9,8 +9,8 @@ use App\Card\CardGraphic;
 class Player
 {
     /** @var Card[] */
-    private array $hand = [];
-    private int $score = 0;
+    protected array $hand = [];
+    protected int $score = 0;
 
     /**
      * @return Card[]
