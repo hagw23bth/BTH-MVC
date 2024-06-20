@@ -2,20 +2,27 @@
 
 namespace App\Card;
 
+/**
+ * Class representing a deck of cards.
+ * Provides methods to initialize, shuffle, sort, and draw cards from the deck.
+ */
 class CardDeck
 {
-    /**
-     * @var CardGraphic[]
+   /**
+     * @var CardGraphic[] Array of cards in the deck.
      */
     private array $cards = [];
 
+    /**
+     * CardDeck constructor.
+     */
     public function __construct()
     {
         $this->initializeDeck();
     }
 
     /**
-     * Initialized deck of 52 cards.
+     * Initializes the deck with 52 cards, one for each combination of suit and value.
      */
     public function initializeDeck(): void
     {
@@ -36,7 +43,7 @@ class CardDeck
     }
 
     /**
-     * Sorts the deck.
+     * Sorts the deck suit and value.
      */
     public function sortDeck(): void
     {
@@ -52,7 +59,7 @@ class CardDeck
     /**
      * Gets the current state of the deck.
      *
-     * @return CardGraphic[]
+     * @return CardGraphic[] Array of cards in the deck.
      */
     public function getCards(): array
     {
@@ -61,9 +68,9 @@ class CardDeck
 
 
     /**
-     * Draws and seperates the first card of the deck.
+     * Draws and seperates the first card from the deck.
      *
-     * @return CardGraphic|null
+     * @return CardGraphic|null The drawn card or null if the deck is empty.
      */
     public function drawCard(): ?CardGraphic
     {

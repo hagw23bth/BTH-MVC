@@ -69,6 +69,10 @@
                 
             </li>
                     <li>
+                <a href="namespaces/app-dice.html" class="">Dice</a>
+                
+            </li>
+                    <li>
                 <a href="namespaces/app-game.html" class="">Game</a>
                 
             </li>
@@ -107,6 +111,9 @@
         <h2 class="phpdocumentor-content__title">
     Bank
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/App-Game-Player.html"><abbr title="\App\Game\Player">Player</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -158,14 +165,14 @@
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Game-Bank.html#property_hand">$hand</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/App-Game-Player.html#property_hand">$hand</a>
     <span>
                         &nbsp;: array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&gt;            </span>
 </dt>
 
-            <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Game-Bank.html#property_score">$score</a>
+            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
+    <a href="classes/App-Game-Player.html#property_score">$score</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
@@ -179,7 +186,7 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Bank.html#method_addCard">addCard()</a>
+    <a href="classes/App-Game-Player.html#method_addCard">addCard()</a>
     <span>
                                 &nbsp;: void    </span>
 </dt>
@@ -191,13 +198,13 @@
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Bank.html#method_getHand">getHand()</a>
+    <a href="classes/App-Game-Player.html#method_getHand">getHand()</a>
     <span>
                                 &nbsp;: array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&gt;    </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Game-Bank.html#method_getScore">getScore()</a>
+    <a href="classes/App-Game-Player.html#method_getScore">getScore()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
@@ -219,18 +226,18 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_hand">
         $hand
-        <a href="classes/App-Game-Bank.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player.html#property_hand" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">12</span>
 
@@ -238,7 +245,7 @@
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$hand</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
@@ -254,18 +261,18 @@
         class="
             phpdocumentor-element
             -property
-            -private
+            -protected
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="property_score">
         $score
-        <a href="classes/App-Game-Bank.html#property_score" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player.html#property_score" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">13</span>
 
@@ -273,7 +280,7 @@
 
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">private</span>
+    <span class="phpdocumentor-signature__visibility">protected</span>
         <span class="phpdocumentor-signature__type">int</span>
     <span class="phpdocumentor-signature__name">$score</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
@@ -301,11 +308,11 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_addCard">
         addCard()
-        <a href="classes/App-Game-Bank.html#method_addCard" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player.html#method_addCard" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">28</span>
 
@@ -350,7 +357,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">34</span>
+    <span class="phpdocumentor-element-found-in__line">11</span>
 
     </aside>
 
@@ -387,11 +394,11 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getHand">
         getHand()
-        <a href="classes/App-Game-Bank.html#method_getHand" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player.html#method_getHand" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 
@@ -424,11 +431,11 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_getScore">
         getScore()
-        <a href="classes/App-Game-Bank.html#method_getScore" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Game-Player.html#method_getScore" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Bank.php"><a href="files/src-game-bank.html"><abbr title="src/Game/Bank.php">Bank.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Game/Player.php"><a href="files/src-game-player.html"><abbr title="src/Game/Player.php">Player.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">23</span>
 
@@ -566,18 +573,18 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/App-Game-Bank.html#property_hand">$hand<a href="classes/App-Game-Bank.html"></li>
-                                                    <li><a href="classes/App-Game-Bank.html#property_score">$score<a href="classes/App-Game-Bank.html"></li>
+                                                    <li><a href="classes/App-Game-Player.html#property_hand">$hand<a href="classes/App-Game-Bank.html"></li>
+                                                    <li><a href="classes/App-Game-Player.html#property_score">$score<a href="classes/App-Game-Bank.html"></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/App-Game-Bank.html#method_addCard">addCard()</a></li>
+                                            <li><a href="classes/App-Game-Player.html#method_addCard">addCard()</a></li>
                                             <li><a href="classes/App-Game-Bank.html#method_drawCard">drawCard()</a></li>
-                                            <li><a href="classes/App-Game-Bank.html#method_getHand">getHand()</a></li>
-                                            <li><a href="classes/App-Game-Bank.html#method_getScore">getScore()</a></li>
+                                            <li><a href="classes/App-Game-Player.html#method_getHand">getHand()</a></li>
+                                            <li><a href="classes/App-Game-Player.html#method_getScore">getScore()</a></li>
                                     </ul>
             </li>
                     </ul>

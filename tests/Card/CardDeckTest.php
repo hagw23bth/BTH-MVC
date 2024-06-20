@@ -62,11 +62,13 @@ class CardDeckTest extends TestCase
         $this->assertEquals($expectedOrder, $cards);
     }
 
+    // Kontrollerar att ett draget kort är av rätt typ och att kortleken minskar när kort dras.
     public function testDrawCard()
     {
         $deck = new CardDeck();
         $initialCount = count($deck->getCards());
         
+        // Kontrollerar att ett draget kort är av typen CardGraphic och att antalet kort i däcket minskar med ett efter dragning.
         $drawnCard = $deck->drawCard();
         $this->assertInstanceOf(CardGraphic::class, $drawnCard);
         $this->assertCount($initialCount - 1, $deck->getCards());
@@ -76,6 +78,7 @@ class CardDeckTest extends TestCase
             $deck->drawCard();
         }
         
+        // Kontrollera att däck är tomt, dvs null.
         $this->assertNull($deck->drawCard());
     }
 }
