@@ -91,7 +91,8 @@
         ],
         "csfix": "vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests",
         "csfix:dry": "tools/php-cs-fixer/vendor/bin/php-cs-fixer --config=.php-cs-fixer.dist.php fix src tests --dry-run -v",
-        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit",
+        "phpunit": "XDEBUG_MODE=coverage vendor/bin/phpunit"
+,
         "phpdoc": "tools/phpdoc/phpdoc --config=tools/phpdoc/phpdoc.xml",
         "phpmd": "tools/phpmd/vendor/bin/phpmd . text phpmd.xml || true",
         "phpstan": "tools/phpstan/vendor/bin/phpstan analyse -c phpstan.neon || true",
