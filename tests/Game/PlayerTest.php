@@ -10,7 +10,7 @@ use App\Card\CardGraphic;
 class PlayerTest extends TestCase
 {
     // Testar att dragning av kort ökar poäng
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         $deck = new CardDeck();
         $deck->shuffleDeck();
@@ -24,7 +24,7 @@ class PlayerTest extends TestCase
     }
 
     // Kontrollerar att handen inte är tom efter dragning av kort samt att alla kort i handen är av typen CardGraphic.
-    public function testGetHand()
+    public function testGetHand(): void
     {
         $deck = new CardDeck();
         $deck->shuffleDeck();
@@ -44,7 +44,7 @@ class PlayerTest extends TestCase
     }
 
     // Kontrollerar att spelarens poäng har uppdaterats korrekt och att kortet finns i spelarens hand.
-    public function testAddCard()
+    public function testAddCard(): void
     {
         $player = new Player();
         $card = new CardGraphic('Spades', 5);
@@ -60,7 +60,7 @@ class PlayerTest extends TestCase
     }
 
     // Kontrollerar att spelarens poäng är korrekt beräknat
-    public function testGetScore()
+    public function testGetScore(): void
     {
         $player = new Player();
         $card1 = new CardGraphic('Hearts', 7);

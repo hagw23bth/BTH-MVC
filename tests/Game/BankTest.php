@@ -10,7 +10,7 @@ use App\Card\CardGraphic;
 class BankTest extends TestCase
 {
     // Testa att dra kort tills poängen är minst 17
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         $deck = new CardDeck();
         $bank = new Bank();
@@ -20,7 +20,7 @@ class BankTest extends TestCase
     }
 
     // Testa att ingen ytterligare kort dras när poängen är 17 eller högre
-    public function testNoAdditionalDrawWhenScoreIs17OrHigher()
+    public function testNoAdditionalDrawWhenScoreIs17OrHigher(): void
     {
         $deck = new CardDeck();
         $deck->shuffleDeck();
@@ -43,7 +43,7 @@ class BankTest extends TestCase
     }
 
     // Testar funktion av ärvd metod getHand
-    public function testGetHand()
+    public function testGetHand(): void
     {
         $deck = new CardDeck();
         $deck->shuffleDeck();
@@ -62,8 +62,8 @@ class BankTest extends TestCase
         }
     }
 
-    // Testar funjtion av ärvd metod addCard
-    public function testAddCard()
+    // Testar funktion av ärvd metod addCard
+    public function testAddCard(): void
     {
         $bank = new Bank();
         $card = new CardGraphic('Spades', 5);

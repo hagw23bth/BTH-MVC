@@ -9,7 +9,7 @@ use App\Card\CardGraphic;
 class CardDeckTest extends TestCase
 {
     // Kontrollerar att en kortlek kan initieras korrekt
-    public function testInitializeDeck()
+    public function testInitializeDeck(): void
     {
         // Initierar en kortlek
         $deck = new CardDeck();
@@ -27,7 +27,7 @@ class CardDeckTest extends TestCase
     }
 
     // Kontrollerar att ordningen på korten har förändrats vid blandning.
-    public function testShuffleDeck()
+    public function testShuffleDeck(): void
     {
         $deck = new CardDeck();
         $cardsBeforeShuffle = $deck->getCards();
@@ -42,7 +42,7 @@ class CardDeckTest extends TestCase
     }
 
     // Kontrollerar att korten är sorterade i förväntad ordning (färg och värde).
-    public function testSortDeck()
+    public function testSortDeck(): void
     {
         $deck = new CardDeck();
         $deck->shuffleDeck(); // Blanda först för att säkerställa att sortering fungerar korrekt
@@ -63,7 +63,7 @@ class CardDeckTest extends TestCase
     }
 
     // Kontrollerar att ett draget kort är av rätt typ och att kortleken minskar när kort dras.
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         $deck = new CardDeck();
         $initialCount = count($deck->getCards());
@@ -74,7 +74,7 @@ class CardDeckTest extends TestCase
         $this->assertCount($initialCount - 1, $deck->getCards());
 
         // Dra alla kort för att säkerställa att vi får null när däcket är tomt
-        for ($i = 0; $i < $initialCount - 1; $i++) {
+        for ($I = 0; $I < $initialCount - 1; $I++) {
             $deck->drawCard();
         }
 

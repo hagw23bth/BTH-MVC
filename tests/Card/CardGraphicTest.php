@@ -7,13 +7,13 @@ use App\Card\CardGraphic;
 
 class CardGraphicTest extends TestCase
 {
-    public function testGetGraphicForNumericCard()
+    public function testGetGraphicForNumericCard(): void
     {
         $card = new CardGraphic('Hearts', 7);
         $this->assertEquals('7♥', $card->getGraphic());
     }
 
-    public function testGetGraphicForFaceCard()
+    public function testGetGraphicForFaceCard(): void
     {
         $card = new CardGraphic('Spades', 11);
         $this->assertEquals('J♠', $card->getGraphic());
@@ -25,31 +25,31 @@ class CardGraphicTest extends TestCase
         $this->assertEquals('K♣', $card->getGraphic());
     }
 
-    public function testGetGraphicForAceCard()
+    public function testGetGraphicForAceCard(): void
     {
         $card = new CardGraphic('Hearts', 1);
         $this->assertEquals('A♥', $card->getGraphic());
     }
 
-    public function testGetGraphicForSuitHearts()
+    public function testGetGraphicForSuitHearts(): void
     {
         $card = new CardGraphic('Hearts', 10);
         $this->assertEquals('10♥', $card->getGraphic());
     }
 
-    public function testGetGraphicForSuitSpades()
+    public function testGetGraphicForSuitSpades(): void
     {
         $card = new CardGraphic('Spades', 5);
         $this->assertEquals('5♠', $card->getGraphic());
     }
 
-    public function testGetGraphicForSuitDiamonds()
+    public function testGetGraphicForSuitDiamonds(): void
     {
         $card = new CardGraphic('Diamonds', 3);
         $this->assertEquals('3♦', $card->getGraphic());
     }
 
-    public function testGetGraphicForSuitClubs()
+    public function testGetGraphicForSuitClubs(): void
     {
         $card = new CardGraphic('Clubs', 8);
         $this->assertEquals('8♣', $card->getGraphic());
