@@ -15,10 +15,10 @@ class PlayerTest extends TestCase
         $deck = new CardDeck();
         $deck->shuffleDeck();
         $player = new Player();
-        
+
         // Dra ett kort
         $player->drawCard($deck);
-        
+
         // Kontrollera att spelarens poäng har ökat
         $this->assertGreaterThan(0, $player->getScore());
     }
@@ -29,11 +29,11 @@ class PlayerTest extends TestCase
         $deck = new CardDeck();
         $deck->shuffleDeck();
         $player = new Player();
-        
+
         // Dra ett kort och kontrollera att handen innehåller ett kort
         $player->drawCard($deck);
         $hand = $player->getHand();
-        
+
         // Kontrollera att handen inte är tom
         $this->assertNotEmpty($hand);
 
@@ -52,7 +52,7 @@ class PlayerTest extends TestCase
 
         // Kontrollera att spelarens poäng är 5
         $this->assertEquals(5, $player->getScore());
-        
+
         // Kontrollera att handen innehåller kortet
         $hand = $player->getHand();
         $this->assertNotEmpty($hand);
@@ -65,7 +65,7 @@ class PlayerTest extends TestCase
         $player = new Player();
         $card1 = new CardGraphic('Hearts', 7);
         $card2 = new CardGraphic('Diamonds', 10);
-        
+
         // Lägg till kort och kontrollera poängen
         $player->addCard($card1);
         $player->addCard($card2);

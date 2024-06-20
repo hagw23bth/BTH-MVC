@@ -19,7 +19,7 @@ class CardDeckTest extends TestCase
         $this->assertCount(52, $cards);
 
         // Kontrollerar att varje färg (suit) har exakt 13 kort.
-        $suits = array_count_values(array_map(fn($card) => $card->getSuit(), $cards));
+        $suits = array_count_values(array_map(fn ($card) => $card->getSuit(), $cards));
         $this->assertEquals(13, $suits['Clubs']);
         $this->assertEquals(13, $suits['Diamonds']);
         $this->assertEquals(13, $suits['Hearts']);
@@ -31,10 +31,10 @@ class CardDeckTest extends TestCase
     {
         $deck = new CardDeck();
         $cardsBeforeShuffle = $deck->getCards();
-        
+
         $deck->shuffleDeck();
         $cardsAfterShuffle = $deck->getCards();
-        
+
         // Kontrollerar att antalet kort är detsamma efter blandning
         $this->assertCount(52, $cardsAfterShuffle);
         // Kontrollerar att ordningen har förändrats (detta test kan ibland misslyckas om slumpmässig blandning inte ändrar ordningen)
@@ -47,10 +47,10 @@ class CardDeckTest extends TestCase
         $deck = new CardDeck();
         $deck->shuffleDeck(); // Blanda först för att säkerställa att sortering fungerar korrekt
         $deck->sortDeck();
-        
+
         $cards = $deck->getCards();
         $this->assertCount(52, $cards);
-        
+
         $expectedOrder = [];
         $suits = ['Clubs', 'Diamonds', 'Hearts', 'Spades'];
         foreach ($suits as $suit) {
@@ -67,17 +67,17 @@ class CardDeckTest extends TestCase
     {
         $deck = new CardDeck();
         $initialCount = count($deck->getCards());
-        
+
         // Kontrollerar att ett draget kort är av typen CardGraphic och att antalet kort i däcket minskar med ett efter dragning.
         $drawnCard = $deck->drawCard();
         $this->assertInstanceOf(CardGraphic::class, $drawnCard);
         $this->assertCount($initialCount - 1, $deck->getCards());
-        
+
         // Dra alla kort för att säkerställa att vi får null när däcket är tomt
         for ($i = 0; $i < $initialCount - 1; $i++) {
             $deck->drawCard();
         }
-        
+
         // Kontrollera att däck är tomt, dvs null.
         $this->assertNull($deck->drawCard());
     }

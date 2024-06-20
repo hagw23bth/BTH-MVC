@@ -17,10 +17,10 @@ class CardGraphicTest extends TestCase
     {
         $card = new CardGraphic('Spades', 11);
         $this->assertEquals('J♠', $card->getGraphic());
-        
+
         $card = new CardGraphic('Diamonds', 12);
         $this->assertEquals('Q♦', $card->getGraphic());
-        
+
         $card = new CardGraphic('Clubs', 13);
         $this->assertEquals('K♣', $card->getGraphic());
     }

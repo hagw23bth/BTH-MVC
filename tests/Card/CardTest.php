@@ -28,7 +28,7 @@ class CardTest extends TestCase
         $this->assertEquals('10 of Diamonds', (string) $card);
     }
 
-	// Kontrollera att toArray() returnerar en array med korrekta suit- och value-värden.
+    // Kontrollera att toArray() returnerar en array med korrekta suit- och value-värden.
     public function testToArray()
     {
         $card = new Card('Clubs', 8);

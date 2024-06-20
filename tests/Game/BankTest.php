@@ -25,7 +25,7 @@ class BankTest extends TestCase
         $deck = new CardDeck();
         $deck->shuffleDeck();
         $bank = new Bank();
-        
+
         // Manipulera bankens poäng direkt för att testa scenariot
         while ($bank->getScore() < 17) {
             $card = new CardGraphic('Hearts', 10);
@@ -34,10 +34,10 @@ class BankTest extends TestCase
 
         // Behåll kortleken för att spåra antalet kort innan drawCard anropas
         $initialCardCount = count($deck->getCards());
-        
+
         // Försök att dra kort när poängen är minst 17
         $bank->drawCard($deck);
-        
+
         // Kontrollera att inga ytterligare kort dras
         $this->assertEquals($initialCardCount, count($deck->getCards()));
     }
@@ -48,11 +48,11 @@ class BankTest extends TestCase
         $deck = new CardDeck();
         $deck->shuffleDeck();
         $bank = new Bank();
-        
+
         // Dra ett kort och kontrollera att handen innehåller ett kort
         $bank->drawCard($deck);
         $hand = $bank->getHand();
-        
+
         // Säkerställer att handen inte är tom efter att ett kort dragits
         $this->assertNotEmpty($hand);
 
@@ -71,7 +71,7 @@ class BankTest extends TestCase
 
         // Kontrollera att bankens poäng är 5
         $this->assertEquals(5, $bank->getScore());
-        
+
         // Kontrollera att handen innehåller kortet
         $hand = $bank->getHand();
         $this->assertNotEmpty($hand); // Säkerställer att handen inte är tom efter att ett kort har lagts till

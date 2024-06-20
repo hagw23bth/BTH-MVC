@@ -8,9 +8,9 @@ namespace App\Card;
  */
 class CardDeck
 {
-   /**
-     * @var CardGraphic[] Array of cards in the deck.
-     */
+    /**
+      * @var CardGraphic[] Array of cards in the deck.
+      */
     private array $cards = [];
 
     /**
