@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1718878564">
-  <project timestamp="1718878564">
+<coverage generated="1718879568">
+  <project timestamp="1718879568">
     <file name="/Users/hannagawlitza/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
-        <metrics complexity="5" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="3" elements="14" coveredelements="5"/>
+        <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
       </class>
-      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="12" type="stmt" count="8"/>
-      <line num="13" type="stmt" count="8"/>
-      <line num="16" type="method" name="getSuit" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="18" type="stmt" count="0"/>
-      <line num="21" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="8"/>
-      <line num="23" type="stmt" count="8"/>
-      <line num="26" type="method" name="__toString" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="28" type="stmt" count="0"/>
-      <line num="34" type="method" name="toArray" visibility="public" complexity="1" crap="2" count="0"/>
-      <line num="36" type="stmt" count="0"/>
-      <line num="37" type="stmt" count="0"/>
-      <line num="38" type="stmt" count="0"/>
-      <line num="39" type="stmt" count="0"/>
-      <metrics loc="42" ncloc="39" classes="1" methods="5" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="3" elements="14" coveredelements="5"/>
+      <line num="10" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="12"/>
+      <line num="12" type="stmt" count="12"/>
+      <line num="13" type="stmt" count="12"/>
+      <line num="16" type="method" name="getSuit" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="18" type="stmt" count="2"/>
+      <line num="21" type="method" name="getValue" visibility="public" complexity="1" crap="1" count="10"/>
+      <line num="23" type="stmt" count="10"/>
+      <line num="26" type="method" name="__toString" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="28" type="stmt" count="1"/>
+      <line num="34" type="method" name="toArray" visibility="public" complexity="1" crap="1" count="1"/>
+      <line num="36" type="stmt" count="1"/>
+      <line num="37" type="stmt" count="1"/>
+      <line num="38" type="stmt" count="1"/>
+      <line num="39" type="stmt" count="1"/>
+      <metrics loc="42" ncloc="39" classes="1" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
     </file>
     <file name="/Users/hannagawlitza/dbwebb-kurser/mvc/me/report/src/Card/CardDeck.php">
       <class name="App\Card\CardDeck" namespace="global">
@@ -429,6 +429,6 @@
       </class>
       <metrics loc="12" ncloc="12" classes="0" methods="0" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="0" coveredstatements="0" elements="0" coveredelements="0"/>
     </file>
-    <metrics files="11" loc="781" ncloc="733" classes="10" methods="44" coveredmethods="14" conditionals="0" coveredconditionals="0" statements="318" coveredstatements="24" elements="362" coveredelements="38"/>
+    <metrics files="11" loc="781" ncloc="733" classes="10" methods="44" coveredmethods="17" conditionals="0" coveredconditionals="0" statements="318" coveredstatements="30" elements="362" coveredelements="47"/>
   </project>
 </coverage>
