@@ -8,12 +8,17 @@ use App\Card\CardGraphic;
 
 class CardDeckTest extends TestCase
 {
+    // Kontrollerar att en kortlek kan initieras korrekt
     public function testInitializeDeck()
     {
+        // Initierar en kortlek
         $deck = new CardDeck();
+
+        // Kontrollerar att däcket innehåller 52 kort.
         $cards = $deck->getCards();
         $this->assertCount(52, $cards);
 
+        // Kontrollerar att varje färg (suit) har exakt 13 kort.
         $suits = array_count_values(array_map(fn($card) => $card->getSuit(), $cards));
         $this->assertEquals(13, $suits['Clubs']);
         $this->assertEquals(13, $suits['Diamonds']);
@@ -21,6 +26,7 @@ class CardDeckTest extends TestCase
         $this->assertEquals(13, $suits['Spades']);
     }
 
+    // Kontrollerar att ordningen på korten har förändrats vid blandning.
     public function testShuffleDeck()
     {
         $deck = new CardDeck();
@@ -29,12 +35,13 @@ class CardDeckTest extends TestCase
         $deck->shuffleDeck();
         $cardsAfterShuffle = $deck->getCards();
         
-        // Kontrollera att antalet kort är detsamma efter blandning
+        // Kontrollerar att antalet kort är detsamma efter blandning
         $this->assertCount(52, $cardsAfterShuffle);
-        // Kontrollera att ordningen har förändrats (detta test kan ibland misslyckas om slumpmässig blandning inte ändrar ordningen)
+        // Kontrollerar att ordningen har förändrats (detta test kan ibland misslyckas om slumpmässig blandning inte ändrar ordningen)
         $this->assertNotEquals($cardsBeforeShuffle, $cardsAfterShuffle);
     }
 
+    // Kontrollerar att korten är sorterade i förväntad ordning (färg och värde).
     public function testSortDeck()
     {
         $deck = new CardDeck();
