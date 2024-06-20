@@ -78,4 +78,3 @@ class BankTest extends TestCase
         $this->assertSame($card, $hand[0]); // Kontrollerar att det dragna kortet är samma objekt som finns i handen
     }
 }
-
