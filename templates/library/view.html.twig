@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}All Books{% endblock %}
+
+{% block body %}
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('library_home') }}">Library</a></li>
+            <li><a href="{{ path('library_create') }}">Add book to library</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>All Books</h1>
+
+        {% for book in books %}
+        <div class="book-details">
+            <img src="{{ asset('img/' ~ book.image) }}" alt="{{ book.title }}" width="200">
+            <h3><a href="{{ path('library_view_one', { id: book.id }) }}">{{ book.title }}</a></h3>
+            <p><strong>Author:</strong> {{ book.author }}</p>
+            <p><strong>ISBN:</strong> {{ book.isbn }}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

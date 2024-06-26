@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Library Home{% endblock %}
+
+{% block body %}
+<div class="inner-container grid-container">
+    <div class="sidebar">
+        <ul>
+            <li><a href="{{ path('library_home') }}">Library</a></li>
+            <li><a href="{{ path('library_create') }}">Add book to library</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <h1>Welcome to the Library</h1>
+        <ul>
+            <li><a href="{{ path('library_create') }}">Add a New Book</a></li>
+            <li><a href="{{ path('library_view_all') }}">View All Books</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -6,6 +6,7 @@ use App\Entity\Book;
 use App\Repository\BookRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -19,22 +20,29 @@ class BookController extends AbstractController
         ]);
     }
 
-    #[Route('/library/create', name: 'library_create')]
+    #[Route('/library/create', name: 'library_create_form', methods: ['GET'])]
+    public function createBookForm(): Response
+    {
+        return $this->render('library/create.html.twig');
+    }
+
+    #[Route('/library/create', name: 'library_create', methods: ['POST'])]
     public function createBook(
-        ManagerRegistry $doctrine
+        ManagerRegistry $doctrine,
+        Request $request
     ): Response {
         $entityManager = $doctrine->getManager();
 
         $book = new Book();
-        $book->setTitle('Sample Book ' . rand(1, 9));
-        $book->setIsbn('1234567890123');
-        $book->setAuthor('Sample Author');
-        $book->setImage('sample_image.jpg');
+        $book->setTitle($request->request->get('title'));
+        $book->setIsbn($request->request->get('isbn'));
+        $book->setAuthor($request->request->get('author'));
+        $book->setImage($request->request->get('image'));
 
         $entityManager->persist($book);
         $entityManager->flush();
 
-        return new Response('Saved new book with id '.$book->getId());
+        return $this->redirectToRoute('library_view_one', ['id' => $book->getId()]);
     }
 
     #[Route('/library/view', name: 'library_view_all')]
