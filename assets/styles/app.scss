@@ -5,7 +5,7 @@
 
 /* VARIABLER */
 $base-color: #C9C9C9;
-$base-color-header: #9C7B98;
+$base-color-header: #4D5A86;
 $base-color-nav: #4A4949;
 $base-color-content: #FFF;
 $base-color-footer: #4A4949;
@@ -236,7 +236,7 @@ nav {
 /* Basic styling for the library books */
 .books-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 20px;
 }
 
@@ -293,4 +293,41 @@ nav {
 a.book-link {
     text-decoration: none;
     color: inherit;
+}
+
+.book-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.book-form .btn {
+    padding: 10px 20px;
+    background-color: #4d535b;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.book-form .btn:hover {
+    background-color: #404042;
 }
