@@ -93,19 +93,19 @@ class BookController extends AbstractController
         $entityManager = $doctrine->getManager();
         $id = $request->request->get('id');
         $book = $entityManager->getRepository(Book::class)->find($id);
-    
+
         if (!$book) {
             throw $this->createNotFoundException(
                 'No book found for id '.$id
             );
         }
-    
+
         $book->setTitle($request->request->get('title'));
         $book->setIsbn($request->request->get('isbn'));
         $book->setAuthor($request->request->get('author'));
         $book->setImage($request->request->get('image'));
         $entityManager->flush();
-    
+
         return $this->redirectToRoute('library_view_one', ['id' => $id]);
     }
 

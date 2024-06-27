@@ -6,7 +6,6 @@ use App\Entity\Book;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
-
 /**
  * @extends ServiceEntityRepository<Product>
  */
@@ -19,7 +18,7 @@ class BookRepository extends ServiceEntityRepository
 
     /**
      * Find a book by its ID.
-     * 
+     *
      * @return Book|null Returns a Book object or null
      */
     public function findById(int $id): ?Book
@@ -33,7 +32,7 @@ class BookRepository extends ServiceEntityRepository
 
     /**
      * Find all books.
-     * 
+     *
      * @return Book[] Returns an array of Book objects
      */
     public function findAllBooks(): array
@@ -46,7 +45,7 @@ class BookRepository extends ServiceEntityRepository
 
     // /**
     //  * Find all products having a value above the specified one.
-    //  * 
+    //  *
     //  * @return Product[] Returns an array of Product objects
     //  */
     // public function findByMinimumValue($value): array
@@ -62,7 +61,7 @@ class BookRepository extends ServiceEntityRepository
 
     // /**
     //  * Find all products having a value above the specified one with SQL.
-    //  * 
+    //  *
     //  * @return array Returns an array of arrays (i.e. a raw data set)
     //  */
     // public function findByMinimumValue2($value): array
