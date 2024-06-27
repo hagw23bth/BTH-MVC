@@ -34,10 +34,10 @@ class BookController extends AbstractController
         $entityManager = $doctrine->getManager();
 
         $book = new Book();
-        $book->setTitle($request->request->get('title'));
-        $book->setIsbn($request->request->get('isbn'));
-        $book->setAuthor($request->request->get('author'));
-        $book->setImage($request->request->get('image'));
+        $book->setTitle((string)$request->request->get('title'));
+        $book->setIsbn((string)$request->request->get('isbn'));
+        $book->setAuthor((string)$request->request->get('author'));
+        $book->setImage((string)$request->request->get('image'));
 
         $entityManager->persist($book);
         $entityManager->flush();
@@ -100,10 +100,10 @@ class BookController extends AbstractController
             );
         }
 
-        $book->setTitle($request->request->get('title'));
-        $book->setIsbn($request->request->get('isbn'));
-        $book->setAuthor($request->request->get('author'));
-        $book->setImage($request->request->get('image'));
+        $book->setTitle((string)$request->request->get('title'));
+        $book->setIsbn((string)$request->request->get('isbn'));
+        $book->setAuthor((string)$request->request->get('author'));
+        $book->setImage((string)$request->request->get('image'));
         $entityManager->flush();
 
         return $this->redirectToRoute('library_view_one', ['id' => $id]);
