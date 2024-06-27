@@ -11,7 +11,11 @@
             <li>
                 <strong>{{ route.title }}:</strong>
                 {% if route.method == 'GET' %}
-                    <a href="{{ path(route.name) }}" target="_blank">{{ route.path }}</a>
+                    {% if route.method == 'GET' %}
+                        <a href="{{ path(route.name, {'isbn': '9781503290563'}) }}" target="_blank">{{ route.path }}</a>
+                    {% else %}
+                        <a href="{{ path(route.name) }}" target="_blank">{{ route.path }}</a>
+                    {% endif %}
                 {% else %}
                     {{ route.path }} - {{ route.method }}
                     <form method="post" action="{{ route.name == 'api_deck_draw_number' ? path(route.name, {'number': 1}) : path(route.name) }}">

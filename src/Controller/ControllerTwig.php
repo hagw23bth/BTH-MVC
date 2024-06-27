@@ -42,6 +42,8 @@ class ControllerTwig extends AbstractController
     #[Route("/api", name: "api")]
     public function api(): Response
     {
+        $exampleIsbn = '9781503290563'; // ISBN for "Pride and Prejudice" by Jane Austen
+
         $apiRoutes = [
             [
                 'title' => 'Quote',
@@ -99,6 +101,24 @@ class ControllerTwig extends AbstractController
                     'method' => 'GET',
                     'description' => (
                         'Visar den aktuella ställningen för spelet i en JSON-struktur.'
+                    )
+                ],
+                [
+                    'title' => 'All Books',
+                    'path' => '/api/library/books',
+                    'name' => 'api_library_books',
+                    'method' => 'GET',
+                    'description' => (
+                        'Returnerar en JSON-struktur med alla böcker i biblioteket.'
+                    )
+                ],
+                [
+                    'title' => 'Book by ISBN',
+                    'path' => '/api/library/book/9781503290563',
+                    'name' => 'api_library_book_by_isbn',
+                    'method' => 'GET',
+                    'description' => (
+                        'Returnerar en JSON-struktur med detaljer om en bok via dess ISBN-nummer.'
                     )
                 ]
         ];

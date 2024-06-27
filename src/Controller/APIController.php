@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Card\CardDeck;
 use App\Card\CardGraphic;
+use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -148,5 +149,27 @@ class APIController extends AbstractController
             'game_over' => $gameOver,
             'player_turn' => $playerTurn,
         ]);
+    }
+
+    #[Route('/api/library/books', name: 'api_library_books')]
+    public function getBooks(BookRepository $bookRepository): JsonResponse
+    {
+        $books = $bookRepository->findAllBooks();
+        $response = $this->json($books);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route('/api/library/book/{isbn}', name: 'api_library_book_by_isbn')]
+    public function getBookByIsbn(BookRepository $bookRepository, string $isbn): JsonResponse
+    {
+        $book = $bookRepository->findOneBy(['isbn' => $isbn]);
+        $response = $this->json($book);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
     }
 }
