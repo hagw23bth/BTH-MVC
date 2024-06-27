@@ -8,9 +8,9 @@
             <ul>
                 <li><a href="#kmom01">Kmom01</a></li>
                 <li><a href="#kmom02">Kmom02</a></li>
-                {# <li><a href="#kmom03">Kmom03</a></li> #}
-                {# <li><a href="#kmom04">Kmom04</a></li> #}
-                {# <li><a href="#kmom05">Kmom05</a></li> #}
+                <li><a href="#kmom03">Kmom03</a></li>
+                <li><a href="#kmom04">Kmom04</a></li>
+                <li><a href="#kmom05">Kmom05</a></li>
                 {# <li><a href="#kmom06">Kmom06</a></li> #}
                 {# <li><a href="#kmom07/10">Kmom07/10</a></li> #}
             </ul>
@@ -54,7 +54,13 @@
                 <p>Jag kan inte själv komma på fler sätt att göra min kod mer testbar men jag är säker på att det finns. Jag inser att det är beroenden mellan olika klasser som skapar de mest komplicerade testfallen. Samtidigt hade koden blivit väldigt upprepande om man försökte kringgå beroende mellan klasser. Rent generellt tror jag att man ofta kan likställa ren och snygg kod som testbar men just i detta avseende kan jag tänka mig att den snyggaste koden inte nödvändigtvis är den lättaste att testa. Det skulle antagligen vara lättare att testa klasserna om man återupprepade sig ibland där det går att kringgå beroende av andra klasser, vilket dock inte är eftersträvansvärt. Men det finns säkert andra effektiva sätt att minimera komplexitet i koden på så vis att koden både blir ren, snygg och testbar. Modularisering verkar vara väldigt tacksamt när man ska skriva enhetstester. Kanske hade jag kunnat modularisera koden ännu mer. </p>
                 <p><strong>TIL:</strong> Användning av PHPUnit och mycket bättre känsla för att skriva enhetstester.</p>
             </section>
-            {# <section id="kmom05"><h2>Kmom05</h2><p>Redovisningstext för kmom05</p></section> #}
+            <section id="kmom05"><h2>Kmom05</h2>
+            <p>Övningen var bra och tydlig. Nu känns det som att jag har lärt mig använda verktygen men det känns däremot inte som att jag lärt mig att sätta upp en databas med doctrine. För att göra det igen skulle jag behöva följa guiden slaviskt igen. Men det känns smidigt att arbeta med eftersom man kan behålla fokus inom applikationen snarare än att växla till att skriva sql-frågor. Det underlättar arbetsflödet för mig och jag kan även se att det verkligen underlättar om alla som ska utveckla applikationen inte har databaskompetens.</p>
+            <p>Jag valde att behålla samma grundstruktur på min twig som på andra sidor inom applikationen dvs en kolumnlayout med sidebar i en kolumn och innehållet i en större kolumn. Till en början höll jag gränssnittet väldigt enkelt men när allt väl fungerade var det frestande att göra små förbättringar.  För en enkel tydligare representation valde jag att lägga detaljerna för varje bok i en egen div som jag genererar dynamiskt. Inom diven centrerade jag innehållet och separerade detaljerna på egna rader för en snygg representation. sedan kändes det relativt enkelt och trevligt att ordna divs på rader. Jag valde att anpassa antalet objekt per rad dels efter skärmstorlek och dels efter hur många objekt som finns tillgängliga att visa.  Jag har även valt att göra hela div-en till länk och framhäva den vid hover. Jag la även lite tid på att styla knappar för edit och delete samt gjorde formulären för edit och create snyggare med ett fält per rad och en snygg knapp för spara. Även om det var lite mer jobb än nödvändigt blev jag väldigt nöjd med min snygga lösning.</p>
+            <p>Att jobba med ORM i CRUD-operationer gick väldigt bra. Doctrine ORM gör det enkelt att mappa objekt till databastabeller och hantera data utan att behöva skriva komplexa SQL-frågor. Jämfört med att jobba direkt med SQL tycker jag att ORM erbjuder en högre abstraktionsnivå som gör koden mer läsbar och underhållsvänlig. Det är också enklare att refaktorera kod och göra ändringar i databasstrukturen när man använder ORM. Dock kan det finnas tillfällen då det kan vara mer effektivt att arbeta med direkta SQL-frågor. </p>
+            <p>Min uppfattning om ORM är positiv. Det underlättar utvecklingen genom att erbjuda ett objektorienterat sätt att interagera med databasen. Detta gör det enklare att skriva, läsa och underhålla kod, särskilt i större projekt. Jämfört med att använda råa SQL-frågor innebär ORM mindre kod och färre möjligheter till fel. Men jag kan tänka mig att det kan vara svårt att reda ut om det väl blir fel utan djupare förståelse för databaser.</p>
+            <p><strong>TIL:</strong> Konfigurera och använda Doctrine.</p>
+            </section>
             {# <section id="kmom06"><h2>Kmom06</h2><p>Redovisningstext för kmom06</p></section> #}
             {# <section id="kmom07/10"><h2>Kmom07/10</h2><p>Redovisningstext för kmom07</p></section> #}
         </div>
