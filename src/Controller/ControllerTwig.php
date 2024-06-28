@@ -38,12 +38,6 @@ class ControllerTwig extends AbstractController
         return $this->render('report.html.twig');
     }
 
-    #[Route("/metrics", name: "metrics")]
-    public function metrics(): Response
-    {
-        return $this->render('metrics.html.twig');
-    }
-
     // Route to show API routes
     #[Route("/api", name: "api")]
     public function api(): Response
