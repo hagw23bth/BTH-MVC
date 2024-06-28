@@ -77,7 +77,7 @@ Använd PHP:s inbyggda server för att snabbt starta din applikation:
 php -S localhost:8080 -t public
 ```
 
-## crutinizer badges:
+## Scrutinizer badges:
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
 [![Code Coverage](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
