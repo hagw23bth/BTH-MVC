@@ -42,8 +42,6 @@ class ControllerTwig extends AbstractController
     #[Route("/api", name: "api")]
     public function api(): Response
     {
-        $exampleIsbn = '9781503290563'; // ISBN for "Pride and Prejudice" by Jane Austen
-
         $apiRoutes = [
             [
                 'title' => 'Quote',
