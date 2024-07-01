@@ -331,3 +331,28 @@ a.book-link {
 .book-form .btn:hover {
     background-color: #404042;
 }
+
+/* METRICS */
+.image-container {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.metrics-wide {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+}
+
+.metrics-square {
+    width: 90%;
+    display: block;
+    height: auto;
+
+    @media (min-width: 768px) {
+        width: 50%;
+    }
+}
