@@ -180,6 +180,34 @@ Sammanfattningsvis ser jag att det finns en röd tråd här i att koden skulle g
 
 ## Scrutinizer
 
+Scrutinizer är ett verktyg för kontinuerlig integration och kodanalys som ger detaljerade rapporter om kodkvalitet. Här är en analys av några viktiga mätvärden från din Scrutinizer-rapport, samt förslag på förbättringar.
+
+Min Scrutinizer-rapport ger i stort sett samma värden och analys som min Phpmetrics-rapport. Båda verktygen analyserar kodkvalitet, komplexitet och testtäckning, men Scrutinizer tillhandahåller dessutom specifika insikter om kodlukt, potentiella buggar och kodduplicering. Dessutom ger Scrutinizer detaljerade kvalitetspoäng för varje fil och metod, vilket inte inkluderas i Phpmetrics.
+
+Istället för att upprepa slutsatser jag redan dragit i min Phphmetrics-analys har valt att lyfta fram några av de unika mätvärdena och insikterna som Scrutinizer erbjuder.
+
+### Kodkvalitetspoäng
+
+Scrutinizer tilldelar en kvalitetspoäng till varje fil och metod, vilket ger en omfattande bild av kodkvaliteten. Till exempel har metoderna Controller\GameController::play(), Controller\CardController::drawNumber(), Controller\ControllerTwig::api() en kvalitetspoäng på B, vilket indikerar att det finns utrymme för förbättring.
+
+<div class="image-container">
+    <img src="img/scrutinizer-hot-spots.png" alt="scrutinizer" class="metrics-wide">
+</div>
+
+**Förbättringsmöjligheter**
+
+- Granska de tre metoder som har fått sämre kvalitetspoäng och se om det går att minska komplexiteten och öka testtäckningen.
+
+### Testtäckning
+
+Scrutinizer ger detaljerade insikter om kodtäckning och visar vilka rader kod som inte täcks av tester. Detta är hjälpsamt för att rikta testinsatser mer effektivt. Precis som jag konstaterade i min analys av phpmetrics-rapporten finns det förbättringspotential i min testtäckning.
+
+### Scrutinizer badges:
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/build.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 
 ## Förbättringar
 
