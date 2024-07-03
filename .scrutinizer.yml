@@ -15,14 +15,14 @@ build:
                 variables:
                     COMPOSER_ALLOW_SUPERUSER: 1
                     COMPOSER_MEMORY_LIMIT: -1
-        analysis:
             tests:
                 override:
-                    - php-scrutinizer-run
-    tests:
-        override:
-            -   command: "composer install --no-interaction --prefer-dist"
-            -   command: "composer phpunit"
+                    - command: "composer install --no-interaction --prefer-dist"
+                    - command: "composer phpunit"
                 coverage:
                     file: "docs/coverage.clover"
                     format: "php-clover"
+        analysis:
+            tests:
+                override:
+                    - command: "php-scrutinizer-run"
