@@ -12,6 +12,8 @@ build:
             environment:
                 php:
                     version: 8.3.3
+                tools:
+                    composer: 2
         analysis:
             tests:
                 override:
