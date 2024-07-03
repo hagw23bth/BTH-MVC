@@ -211,3 +211,61 @@ Scrutinizer ger detaljerade insikter om kodtäckning och visar vilka rader kod s
 
 ## Förbättringar
 
+**1. Fixa identifierade issues**
+
+Åtgärda de problem som identifierats av Scrutinizer, särskilt de som rör kodstil och potentiella buggar.
+
+**Syfte:** 
+
+Att fixa dessa problem kommer direkt att förbättra kodkvaliteten och minska risken för buggar.
+
+Här är en kort sammanfattning av de nuvarande problemen i din Scrutinizer-rapport:
+
+1. src/Controller/ControllerTwig.php: unused code
+2. app/src/Kernel.php: Ett problem relaterat till Kernel-konfigurationen eller inställningen.
+3. src/Controller/CardController.php: Ett problem som rör funktionaliteten eller strukturen inom CardController.
+4. src/Kernel.php: Ett annat problem i Kernel-filen, möjligen liknande det första.
+
+**Förväntan:** 
+
+En scrutinizer-rapport utan issues. Förbättrade kvalitetsindex i Scrutinizer och en mer robust kodbas.
+
+
+**2. Bryta ut spellogik ur gameController till en separat modul src/Game/GameService**
+
+Refaktorisera GameController för att minska dess beroende av andra klasser genom att flytta ut spellogik från play()-metoden från controllern till en separat klass (serviceklass)  och därmed minska mängden kod och ansvar i GameController. Detta gör koden enklare att förstå och underhålla, vilket minskar den cyklomatiska komplexiteten. Genom att introducera GameService förväntas också kopplingen mellan olika delar av koden att minska. GameController blir mindre beroende av detaljerna i spel-logiken och kan fokusera på att hantera HTTP-förfrågningar och svar. GameService kan återanvändas och testas oberoende av GameController, vilket gör koden mer modulär och lättare att underhålla.
+
+**Syfte:** Syftet med denna förändring är att minska de höga värden på koppling och cyklomatisk komplexitet som vi ser hos GameController.
+
+Nuvarande värden på GameController:
+
+ - WMC (Weighted Methods per Class): 14 
+ - Class cycl. (Cyclomatic Complexity): 9
+ - Max method cycl. (Max Cyclomatic Complexity for a single method): 7
+ - Afferent Coupling (Ca): 0
+ - Efferent Coupling (Ce): 6
+ - Relative structural complexity: 100
+ - Instability: 1
+ - Scrutinizer-betyg: B
+
+**Förväntan:** 	
+1.	Minskad komplexitet i GameController. Cyklomatiska komplexiteten och WMC-värdena minskar då en del av logiken flyttas till en separat klass.
+2. Minskad koppling: GameController blir mindre beroende av implementeringen av spel-logiken, vilket minskar efferent koppling (Ce) för GameController.
+
+Introduktion av nya klasser:
+ - GameService:
+ - En ny klass ökar den totala kodmängden och kan introducera ny koppling och komplexitet i GameService.
+
+Förväntad nettopåverkan totalt sätt:
+ - Minskning av komplexitet och koppling i GameController.
+ - Eventuellt se om betyget i scrutinizer för klassen kan bli A istället för B.
+ - En viss ökning av koppling och komplexitet i GameService.
+ - Den totala effekten beror på hur väl GameService designas och implementeras.
+
+**3. Öka testtäckning**
+
+Skriva fler enhetstester för att öka testtäckningen.
+
+**Syfte:** Kodtäckningen är för närvarande 14.1%, vilket är relativt lågt. Ökad kodtäckning säkerställer att fler delar av koden testas, vilket kan leda till färre buggar och högre kodkvalitet.
+
+**Förväntan:** Öka kodtäckningen och på så vis förbättra Scrutinizer och Phpmetrics resultat för testtäckning.
