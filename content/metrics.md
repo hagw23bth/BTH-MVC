@@ -221,15 +221,29 @@ Att fixa dessa problem kommer direkt att förbättra kodkvaliteten och minska ri
 
 Här är en kort sammanfattning av de nuvarande problemen i din Scrutinizer-rapport:
 
-1. src/Controller/ControllerTwig.php: unused code
-2. app/src/Kernel.php: Ett problem relaterat till Kernel-konfigurationen eller inställningen.
+1. src/Controller/ControllerTwig.php: Kodrester kvarglömt från tidigare kmom.
+
+*"unused code"*
+
+2. src/Kernel.php: Ett problem relaterat till Kernel-konfigurationen eller inställningen.
+
+*"The trait Symfony\Bundle\Framework...Kernel\MicroKernelTrait requires some properties which are not provided by App\Kernel: $instanceof, $name"*
+
 3. src/Controller/CardController.php: Ett problem som rör funktionaliteten eller strukturen inom CardController.
-4. src/Kernel.php: Ett annat problem i Kernel-filen, möjligen liknande det första.
+
+*"The condition is_array($hand) is always true."*
+
+4. src/Kernel.php: Ett annat problem i Kernel-filen, ser likt ut det första.
+
+*"The trait Symfony\Bundle\Framework...Kernel\MicroKernelTrait requires some properties which are not provided by App\Kernel: $instanceof, $name"*
 
 **Förväntan:** 
 
 En scrutinizer-rapport utan issues. Förbättrade kvalitetsindex i Scrutinizer och en mer robust kodbas.
 
+**Resultat:**
+
+Samtliga issues åtgärdade. Ren rapport.
 
 **2. Bryta ut spellogik ur gameController till en separat modul src/Game/GameService**
 
@@ -262,6 +276,9 @@ Förväntad nettopåverkan totalt sätt:
  - En viss ökning av koppling och komplexitet i GameService.
  - Den totala effekten beror på hur väl GameService designas och implementeras.
 
+**Resultat:**
+
+
 **3. Öka testtäckning**
 
 Skriva fler enhetstester för att öka testtäckningen.
@@ -269,3 +286,5 @@ Skriva fler enhetstester för att öka testtäckningen.
 **Syfte:** Kodtäckningen är för närvarande 14.1%, vilket är relativt lågt. Ökad kodtäckning säkerställer att fler delar av koden testas, vilket kan leda till färre buggar och högre kodkvalitet.
 
 **Förväntan:** Öka kodtäckningen och på så vis förbättra Scrutinizer och Phpmetrics resultat för testtäckning.
+
+**Resultat:**
