@@ -43,7 +43,7 @@ build:
         analysis:
             tests:
                 override:
-                    - composer self-update --2
+                    - curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
                     - composer install --no-interaction --prefer-dist
                     - php-scrutinizer-run
                     #- phpcs-run # Not used, missing config file
