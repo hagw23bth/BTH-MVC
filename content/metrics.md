@@ -243,7 +243,7 @@ En scrutinizer-rapport utan issues. Förbättrade kvalitetsindex i Scrutinizer o
 
 **Resultat:**
 
-Samtliga issues åtgärdade. Ren rapport.
+Samtliga issues åtgärdade. Dock har jag krångel med att få scrutinizer att notera alla mina commits. Jag ser därför inte resultatet av mina ändringar.
 
 **2. Bryta ut spellogik ur gameController till en separat modul src/Game/GameService**
 
@@ -263,7 +263,7 @@ Nuvarande värden på GameController:
  - Scrutinizer-betyg: B
 
 **Förväntan:** 	
-1.	Minskad komplexitet i GameController. Cyklomatiska komplexiteten och WMC-värdena minskar då en del av logiken flyttas till en separat klass.
+1. Minskad komplexitet i GameController. Cyklomatiska komplexiteten och WMC-värdena minskar då en del av logiken flyttas till en separat klass.
 2. Minskad koppling: GameController blir mindre beroende av implementeringen av spel-logiken, vilket minskar efferent koppling (Ce) för GameController.
 
 Introduktion av nya klasser:
