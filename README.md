@@ -86,7 +86,7 @@ php -S localhost:8080 -t public
 
 ## Tester
 
-... Här kommer instruktioner om hur man kör sidans tester.
+... Här kommer instruktioner om hur man kör sidans tester
 
 # Länkar
 ## Kursrepo Github 
@@ -97,3 +97,4 @@ https://github.com/hagw23bth/BTH-MVC/tree/master
 =======
 # BTH-MVC
 >>>>>>> origin/main
+
