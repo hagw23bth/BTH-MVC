@@ -23,6 +23,6 @@ build:
         override:
             - command: "composer install --no-interaction --prefer-dist"
             - command: "composer phpunit --coverage-clover=docs/coverage.clover"
-    coverage:
-        file: "docs/coverage.clover"
-        format: "php-clover"
+        coverage:
+            file: "docs/coverage.clover"
+            format: "php-clover"
