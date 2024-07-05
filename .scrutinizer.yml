@@ -12,17 +12,18 @@ build:
             environment:
                 php:
                     version: 8.3.3
-                variables:
-                    COMPOSER_ALLOW_SUPERUSER: 1
-                    COMPOSER_MEMORY_LIMIT: -1
+                    # version: 8.1.13
+                    # version: 8.1.17
+                    # version: 8.2.4
         analysis:
             tests:
                 override:
                     - php-scrutinizer-run
+                    #- phpcs-run # Not used, missing config file
     tests:
         override:
-            - command: "composer install --no-interaction --prefer-dist"
-            - command: "composer phpunit --coverage-clover=docs/coverage.clover"
-        coverage:
-            file: "docs/coverage.clover"
-            format: "php-clover"
+            -   command: "composer phpunit"
+                # command: "XDEBUG_MODE=coverage vendor/bin/phpunit"
+                coverage:
+                    file: "docs/coverage.clover"
+                    format: "php-clover"
