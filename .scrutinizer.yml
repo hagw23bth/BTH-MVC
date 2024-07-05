@@ -19,11 +19,10 @@ build:
             tests:
                 override:
                     - php-scrutinizer-run
-            tests:
-                override:
-                    - command: "composer install --no-interaction --prefer-dist"
-                    - command: "composer phpunit --coverage-clover=docs/coverage.clover"
-                    - command: "composer phpunit"
-                    - coverage:
-                        file: "docs/coverage.clover"
-                        format: "php-clover"
+    tests:
+        override:
+            - command: "composer install --no-interaction --prefer-dist"
+            - command: "composer phpunit --coverage-clover=docs/coverage.clover"
+    coverage:
+        file: "docs/coverage.clover"
+        format: "php-clover"
