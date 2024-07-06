@@ -1,27 +1,27 @@
-imports:
-    - php
+# imports:
+#     - php
 
-filter:
-    excluded_paths: [vendor/*, test/*]
+# filter:
+#     excluded_paths: [vendor/*, test/*]
 
-build:
-    image: default-bionic
+# build:
+#     image: default-bionic
 
-    nodes:
-        my-tests:
-            environment:
-                php:
-                    version: 8.3.3
-                variables:
-                    COMPOSER_ALLOW_SUPERUSER: 1
-                    COMPOSER_MEMORY_LIMIT: -1
-            tests:
-                override:
-                    - composer install --no-interaction --prefer-dist
-                    - phpunit
-                coverage:
-                    file: "docs/coverage.clover"
-                    format: "php-clover"
+#     nodes:
+#         my-tests:
+#             environment:
+#                 php:
+#                     version: 8.3.3
+#                 variables:
+#                     COMPOSER_ALLOW_SUPERUSER: 1
+#                     COMPOSER_MEMORY_LIMIT: -1
+#             tests:
+#                 override:
+#                     - composer install --no-interaction --prefer-dist
+#                     - phpunit
+#                 coverage:
+#                     file: "docs/coverage.clover"
+#                     format: "php-clover"
 
 # imports:
 #     - php
@@ -54,3 +54,25 @@ build:
 #                 coverage:
 #                     file: "docs/coverage.clover"
 #                     format: "php-clover"
+
+imports:
+    - php
+
+filter:
+    excluded_paths: [vendor/*, test/*]
+
+build:
+    image: default-bionic
+
+    nodes:
+        my-tests:
+            environment:
+                php:
+                    version: 8.3.3
+                variables:
+                    COMPOSER_ALLOW_SUPERUSER: 1
+                    COMPOSER_MEMORY_LIMIT: -1
+            tests:
+                override:
+                    - command: "composer install --no-interaction --prefer-dist"
+                    - command: "composer phpunit --coverage-clover=docs/coverage.clover"
