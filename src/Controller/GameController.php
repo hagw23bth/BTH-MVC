@@ -2,10 +2,7 @@
 
 namespace App\Controller;
 
-use App\Card\CardDeck;
-use App\Card\CardGraphic;
-use App\Game\Player;
-use App\Game\Bank;
+use App\Game\GameService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -13,6 +10,13 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class GameController extends AbstractController
 {
+    private $gameService;
+
+    public function __construct(GameService $gameService)
+    {
+        $this->gameService = $gameService;
+    }
+
     #[Route("/game", name: "game")]
     public function gameHome(): Response
     {
@@ -28,58 +32,15 @@ class GameController extends AbstractController
     #[Route('/game/play', name: 'game_play')]
     public function play(SessionInterface $session): Response
     {
-        // Initiera spelet om det inte redan är initierat
-        if (!$session->has('deck')) {
-            $deck = new CardDeck();
-            $deck->shuffleDeck();
-
-            $session->set('deck', $deck);
-            $session->set('player', new Player());
-            $session->set('bank', new Bank());
-            $session->set('game_over', false);
-            $session->set('player_turn', true);
-        }
-
-        // Hämta objekten från sessionen direkt
-        /** @var CardDeck $deck */
-        $deck = $session->get('deck');
-        /** @var Player $player */
-        $player = $session->get('player');
-        /** @var Bank $bank */
-        $bank = $session->get('bank');
-        $gameOver = $session->get('game_over');
-        $playerTurn = $session->get('player_turn');
-
-        if (!$gameOver && !$playerTurn) {
-            // Bankens tur att spela
-            $bank->drawCard($deck);
-
-            $playerScore = $player->getScore();
-            $bankScore = $bank->getScore();
-
-            $session->set('game_over', true);
-
-            if ($bankScore > 21 || $playerScore > $bankScore) {
-                $session->set('result_message', 'Du vann!');
-            } elseif ($playerScore < $bankScore) {
-                $session->set('result_message', 'Banken vann!');
-            } else {
-                $session->set('result_message', 'Det blev oavgjort!');
-            }
-
-            $session->set('deck', $deck);
-            $session->set('player', $player);
-            $session->set('bank', $bank);
-
-            return $this->redirectToRoute('game_play');
-        }
-
+        $this->gameService->initializeGame($session);
+        $this->gameService->playTurn($session);
+    
         return $this->render('game/play.html.twig', [
-            'deck' => $deck,
-            'player' => $player,
-            'bank' => $bank,
-            'game_over' => $gameOver,
-            'player_turn' => $playerTurn,
+            'deck' => $session->get('deck'),
+            'player' => $session->get('player'),
+            'bank' => $session->get('bank'),
+            'game_over' => $session->get('game_over'),
+            'player_turn' => $session->get('player_turn'),
             'result_message' => $session->get('result_message')
         ]);
     }
@@ -87,24 +48,7 @@ class GameController extends AbstractController
     #[Route('/game/draw-card', name: 'game_draw_card')]
     public function drawCard(SessionInterface $session): Response
     {
-        /** @var CardDeck $deck */
-        $deck = $session->get('deck');
-        /** @var Player $player */
-        $player = $session->get('player');
-
-        $card = $deck->drawCard();
-        if ($card instanceof CardGraphic) {
-            $player->addCard($card);
-        }
-
-        if ($player->getScore() > 21) {
-            $session->set('game_over', true);
-            $session->set('result_message', 'Banken vann!');
-            $session->set('player_turn', false);
-        }
-
-        $session->set('deck', $deck);
-        $session->set('player', $player);
+        $this->gameService->drawCard($session);
 
         return $this->redirectToRoute('game_play');
     }
@@ -112,7 +56,7 @@ class GameController extends AbstractController
     #[Route('/game/pass', name: 'game_pass')]
     public function pass(SessionInterface $session): Response
     {
-        $session->set('player_turn', false);
+        $this->gameService->passTurn($session);
 
         return $this->redirectToRoute('game_play');
     }
@@ -120,7 +64,7 @@ class GameController extends AbstractController
     #[Route('/game/restart', name: 'game_restart')]
     public function restart(SessionInterface $session): Response
     {
-        $session->clear();
+        $this->gameService->restartGame($session);
 
         return $this->redirectToRoute('game_play');
     }

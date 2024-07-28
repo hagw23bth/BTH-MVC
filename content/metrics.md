@@ -243,7 +243,7 @@ En scrutinizer-rapport utan issues. Förbättrade kvalitetsindex i Scrutinizer o
 
 **Resultat:**
 
-Samtliga issues är åtgärdade. Jag får dock inte det förväntade resultatet "issue fixed" utan scrutinizer verkar inte registrera förändringarna. De issues jag hade syns fortfarande med statusen "last detected 8 days ago". Jag tolkar det att de inte längre detekteras som ett indirekt tecken på att jag lyckats åtgärda dem. Felet kan bero på att jag verkar ha problem med att få scrutinizer att notera alla mina commits något jag försöker lösa med att byta mailadress för att säkerställa att jag anvädner samma som på github, manuellt starta inspektion, committa alla filer på nytt och modifiera scuritinzer konfigurationen så att cache rensas i samband med en inspektion.
+Samtliga issues är åtgärdade. Jag får dock inte det förväntade resultatet "issue fixed" utan scrutinizer verkar inte registrera förändringarna. De issues jag hade syns fortfarande med statusen "last found 8 days ago". Jag tolkar det att de inte längre detekteras som ett indirekt tecken på att jag lyckats åtgärda dem. Felet kan bero på att jag verkar ha problem med att få scrutinizer att notera alla mina commits något jag försöker lösa med att byta mailadress för att säkerställa att jag anvädner samma som på github, manuellt starta inspektion, committa alla filer på nytt och modifiera scuritinzer konfigurationen så att cache rensas i samband med en inspektion.
 
 **2. Bryta ut spellogik ur gameController till en separat modul src/Game/GameService**
 

@@ -78,4 +78,3 @@ build:
                     - command: "composer install --no-interaction --prefer-dist"
                     - command: "rm -rf docs/coverage.clover"
                     - command: "composer phpunit --coverage-clover=docs/coverage.clover"
-                    
