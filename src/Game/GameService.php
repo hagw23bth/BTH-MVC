@@ -57,7 +57,6 @@ class GameService
             $session->set('deck', $deck);
             $session->set('player', $player);
             $session->set('bank', $bank);
-            return $this->redirectToRoute('game_play');
         }
     }
 
