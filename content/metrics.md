@@ -278,6 +278,30 @@ Förväntad nettopåverkan totalt sätt:
 
 **Resultat:**
 
+Efter ändringarna körde jag en ny granskning med scrutinizer och phpmetrics.
+
+Nya värden för GameController:
+
+ - WMC (Weighted Methods per Class): 6 
+ - Class cycl. (Cyclomatic Complexity): 1
+ - Max method cycl. (Max Cyclomatic Complexity for a single method): 1
+ - Afferent Coupling (Ca): 0
+ - Efferent Coupling (Ce): 4
+ - Relative structural complexity: 64
+ - Instability: 1
+ - Scrutinizer-betyg: A
+
+
+Värden för den nya modulen src/Game/GameService:
+
+ - WMC (Weighted Methods per Class): 13
+ - Class cycl. (Cyclomatic Complexity): 9
+ - Max method cycl. (Max Cyclomatic Complexity for a single method): 6
+ - Afferent Coupling (Ca): 1
+ - Efferent Coupling (Ce): 4
+ - Relative structural complexity: 81
+ - Instability: 0.8
+ - Scrutinizer-betyg: B
 
 **3. Öka testtäckning**
 
