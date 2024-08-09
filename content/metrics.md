@@ -291,7 +291,6 @@ Nya värden för GameController:
  - Instability: 1
  - Scrutinizer-betyg: A
 
-
 Värden för den nya modulen src/Game/GameService:
 
  - WMC (Weighted Methods per Class): 13
@@ -311,4 +310,27 @@ Skriva fler enhetstester för att öka testtäckningen.
 
 **Förväntan:** Öka kodtäckningen och på så vis förbättra Scrutinizer och Phpmetrics resultat för testtäckning.
 
-**Resultat:**
+**Resultat:** Skrev enhetstest för den nya modulen GameService. Nytt värde på testtäckning är nu 18.9% vilket är en förbättring mot tidigare 14.1%.
+
+## Diskussion
+
+Av de insatser jag gjort för att aktivt förbättra kodkvaliteten har jag sett förbättringar i mina mätvärden och tycker samtidigt att jag förbättrat funktionalitet och kvalitet på koden. Det är tydligt att verktyg som Phpmetrics och Scrutinizer kan ge värdefulla insikter i var vår kod kan förbättras genom att highlighta var brister finns. Genom att följa de sex C:na om kodkvalitet har jag kunnat identifiera och åtgärda specifika problemområden.
+
+### Fördelar
+Det finns flera fördelar med de verktygen vi använt för att förbättra kodkvaliteten:
+- **Tydlig feedback**: De ger konkret feedback på var koden kan förbättras, highlightar brister, vilket gör det enkelt att prioritera förbättringsinsatser.
+- **Automatiserad kontroll**: Jag ser verkligen ett värde i att automatisera och integrera verktyg som Scrutinizer i CI/CD-pipeline för att kontinuerligt övervaka och upprätthålla kodkvaliteten.
+- **Minskad teknisk skuld**: Genom att regelbundet analysera och förbättra koden kan vi minska den tekniska skulden och göra koden mer underhållsbar på lång sikt.
+
+### Nackdelar
+Jag har reflekterat över några potentiella nackdelar att överväga:
+- **Tid och resurser**: Att analysera och förbättra kodkvaliteten kan vara tidskrävande och resurskrävande. Särskilt tidskrävande och omfattande tycker jag arbetet har varit nu när vi använt flera olika (och för mig nya) verktyg för samma projekt. Det har tagit mycket tid att konfigurera alla verktyg och få dem att fungera, särskilt scrutinizer har krånglat och trots att jag la mycket tid på efterforskning och försöka konfigurera om så har jag inte lyckats få allt att fungera. Jag antar att det beror på att min testperiod löpt ut och jag har inte varit villig att betala 49 euro för att förlänga den. Min tanke för framtiden är att alla de här verktygen vi testat har stora fördelar när man lär sig dem och jag kommer nog i framtiden välja vilket av verktygen jag tycker känns relevant för vilket projekt för att hålla nere komplexiteten och fokusera min tid på att förbättra koden istället för att konfigurera för många verktyg. Flera av verktygen ger ju väldigt liknande information. Jag är dock tacksam att vi fått testa på dem nu och tror att scrutinizer säkert fungerar bättre när man betalar för tjänsten och lär sig den ordentligt.
+- **Överdriven fokus på mätvärden**: Det är nog också viktigt att inte bli alltför fokuserad på att förbättra mätvärden på bekostnad av att leverera funktionalitet. Mätvärdena borde ses som en vägledning snarare än ett mål i sig. 
+
+### Möjligheter för vidare förbättring
+Det finns flera sätt att fortsätta arbeta med kodkvalitet och "clean code":
+- **Fokusera på att skriva enkel och lätt testbar kod**: Jag har märkt ett tydlgit samband mellan att de klasser och metoder som är enklast att skriva tester för ofta är de med lägst komplexitet och samband. Att fokusera på att skriva testbar kod och sedan skriva tester tror jag kan vara en bra väg att uppnå "clean code".
+- **Regelbunden kodgranskning**: Samarbeta i ett team med regelbundna granskningar av varandras kod.
+- **Automatiserade verktyg**: Fortsätta att använda och utvärdera nya verktyg för statisk kodanalys och testtäckning.
+
+Sammanfattningsvis har denna övning visat att verktyg som Phpmetrics och Scrutinizer kan vara till stor hjälp i arbetet med att förbättra kodkvaliteten. Genom att fortsätta följa principerna för "clean code" kan vi göra vår kodbas mer robust, underhållbar och lätt att förstå.
