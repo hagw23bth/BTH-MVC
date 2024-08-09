@@ -256,6 +256,11 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html"
         },                {
+            "fqsen": "\\App\\Controller\\GameController\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Controller-GameController.html#method___construct"
+        },                {
             "fqsen": "\\App\\Controller\\GameController\u003A\u003AgameHome\u0028\u0029",
             "name": "gameHome",
             "summary": "",
@@ -286,30 +291,20 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-GameController.html#method_restart"
         },                {
-            "fqsen": "\\App\\Dice\\Dice",
-            "name": "Dice",
+            "fqsen": "\\App\\Controller\\GameController\u003A\u003A\u0024gameService",
+            "name": "gameService",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html"
+            "url": "classes/App-Controller-GameController.html#property_gameService"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
+            "fqsen": "\\App\\Controller\\MetricsController",
+            "name": "MetricsController",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method___construct"
+            "url": "classes/App-Controller-MetricsController.html"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003Aroll\u0028\u0029",
-            "name": "roll",
+            "fqsen": "\\App\\Controller\\MetricsController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method_roll"
-        },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetAsString\u0028\u0029",
-            "name": "getAsString",
-            "summary": "",
-            "url": "classes/App-Dice-Dice.html#method_getAsString"
-        },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003A\u0024value",
-            "name": "value",
-            "summary": "",
-            "url": "classes/App-Dice-Dice.html#property_value"
+            "url": "classes/App-Controller-MetricsController.html#method_metrics"
         },                {
             "fqsen": "\\App\\Entity\\Book",
             "name": "Book",
@@ -396,6 +391,36 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Game-Bank.html#method_drawCard"
         },                {
+            "fqsen": "\\App\\Game\\GameService",
+            "name": "GameService",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html"
+        },                {
+            "fqsen": "\\App\\Game\\GameService\u003A\u003AinitializeGame\u0028\u0029",
+            "name": "initializeGame",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html#method_initializeGame"
+        },                {
+            "fqsen": "\\App\\Game\\GameService\u003A\u003AplayTurn\u0028\u0029",
+            "name": "playTurn",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html#method_playTurn"
+        },                {
+            "fqsen": "\\App\\Game\\GameService\u003A\u003AdrawCard\u0028\u0029",
+            "name": "drawCard",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html#method_drawCard"
+        },                {
+            "fqsen": "\\App\\Game\\GameService\u003A\u003ApassTurn\u0028\u0029",
+            "name": "passTurn",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html#method_passTurn"
+        },                {
+            "fqsen": "\\App\\Game\\GameService\u003A\u003ArestartGame\u0028\u0029",
+            "name": "restartGame",
+            "summary": "",
+            "url": "classes/App-Game-GameService.html#method_restartGame"
+        },                {
             "fqsen": "\\App\\Game\\Player",
             "name": "Player",
             "summary": "",
@@ -436,6 +461,16 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Kernel.html"
         },                {
+            "fqsen": "\\App\\Kernel\u003A\u003A\u0024name",
+            "name": "name",
+            "summary": "",
+            "url": "classes/App-Kernel.html#property_name"
+        },                {
+            "fqsen": "\\App\\Kernel\u003A\u003A\u0024instanceof",
+            "name": "instanceof",
+            "summary": "",
+            "url": "classes/App-Kernel.html#property_instanceof"
+        },                {
             "fqsen": "\\App\\Repository\\BookRepository",
             "name": "BookRepository",
             "summary": "",
@@ -456,6 +491,31 @@ Search.appendIndex(
             "summary": "Find\u0020all\u0020books.",
             "url": "classes/App-Repository-BookRepository.html#method_findAllBooks"
         },                {
+            "fqsen": "\\App\\Service\\MarkdownParser",
+            "name": "MarkdownParser",
+            "summary": "",
+            "url": "classes/App-Service-MarkdownParser.html"
+        },                {
+            "fqsen": "\\App\\Service\\MarkdownParser\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Service-MarkdownParser.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Service\\MarkdownParser\u003A\u003Aparse\u0028\u0029",
+            "name": "parse",
+            "summary": "",
+            "url": "classes/App-Service-MarkdownParser.html#method_parse"
+        },                {
+            "fqsen": "\\App\\Service\\MarkdownParser\u003A\u003A\u0024converter",
+            "name": "converter",
+            "summary": "",
+            "url": "classes/App-Service-MarkdownParser.html#property_converter"
+        },                {
+            "fqsen": "\\App\\Service\\MarkdownParser\u003A\u003A\u0024filesystem",
+            "name": "filesystem",
+            "summary": "",
+            "url": "classes/App-Service-MarkdownParser.html#property_filesystem"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -470,11 +530,6 @@ Search.appendIndex(
             "name": "Controller",
             "summary": "",
             "url": "namespaces/app-controller.html"
-        },                {
-            "fqsen": "\\App\\Dice",
-            "name": "Dice",
-            "summary": "",
-            "url": "namespaces/app-dice.html"
         },                {
             "fqsen": "\\App\\Entity",
             "name": "Entity",
@@ -495,5 +550,10 @@ Search.appendIndex(
             "name": "Repository",
             "summary": "",
             "url": "namespaces/app-repository.html"
+        },                {
+            "fqsen": "\\App\\Service",
+            "name": "Service",
+            "summary": "",
+            "url": "namespaces/app-service.html"
         }            ]
 );
