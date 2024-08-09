@@ -34,7 +34,7 @@ class GameController extends AbstractController
     {
         $this->gameService->initializeGame($session);
         $this->gameService->playTurn($session);
-    
+
         return $this->render('game/play.html.twig', [
             'deck' => $session->get('deck'),
             'player' => $session->get('player'),
