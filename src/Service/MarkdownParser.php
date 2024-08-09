@@ -8,8 +8,8 @@ use Symfony\Component\Filesystem\Filesystem;
 
 class MarkdownParser
 {
-    private $converter;
-    private $filesystem;
+    private CommonMarkConverter $converter;
+    private Filesystem $filesystem;
 
     public function __construct()
     {
@@ -24,6 +24,10 @@ class MarkdownParser
         }
 
         $markdownContent = file_get_contents($filePath);
+
+        if ($markdownContent === false) {
+            throw new \RuntimeException(sprintf('Failed to read the file "%s".', $filePath));
+        }
 
         return $this->converter->convertToHtml($markdownContent);
     }

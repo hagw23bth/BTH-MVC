@@ -10,7 +10,7 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 class GameController extends AbstractController
 {
-    private $gameService;
+    private GameService $gameService;
 
     public function __construct(GameService $gameService)
     {

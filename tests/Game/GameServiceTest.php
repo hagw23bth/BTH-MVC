@@ -14,8 +14,8 @@ use Symfony\Component\HttpFoundation\Session\Session;
 
 class GameServiceTest extends TestCase
 {
-    private $session;
-    private $gameService;
+    private Session $session;
+    private GameService $gameService;
 
     // Set up metoden körs innan varje test. Här initieras session och gameService.
     protected function setUp(): void
@@ -26,7 +26,7 @@ class GameServiceTest extends TestCase
     }
 
     // Testar att spelet initialiseras korrekt.
-    public function testInitializeGame()
+    public function testInitializeGame(): void
     {
         // Kör initializeGame-metoden
         $this->gameService->initializeGame($this->session);
@@ -40,7 +40,7 @@ class GameServiceTest extends TestCase
     }
 
     // Testar att spela en tur
-    public function testPlayTurn()
+    public function testPlayTurn(): void
     {
         // Initiera spelet först
         $this->gameService->initializeGame($this->session);
@@ -60,7 +60,7 @@ class GameServiceTest extends TestCase
     }
 
     // Testar att dra ett kort
-    public function testDrawCard()
+    public function testDrawCard(): void
     {
         // Initiera spelet först
         $this->gameService->initializeGame($this->session);
@@ -86,7 +86,7 @@ class GameServiceTest extends TestCase
     }
 
     // Testar att passera turen
-    public function testPassTurn()
+    public function testPassTurn(): void
     {
         // Initiera spelet först
         $this->gameService->initializeGame($this->session);
@@ -97,7 +97,7 @@ class GameServiceTest extends TestCase
     }
 
     // Testar att starta om spelet
-    public function testRestartGame()
+    public function testRestartGame(): void
     {
         // Initiera spelet först
         $this->gameService->initializeGame($this->session);
