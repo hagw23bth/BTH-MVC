@@ -11,7 +11,7 @@
                 <li><a href="#kmom03">Kmom03</a></li>
                 <li><a href="#kmom04">Kmom04</a></li>
                 <li><a href="#kmom05">Kmom05</a></li>
-                {# <li><a href="#kmom06">Kmom06</a></li> #}
+                <li><a href="#kmom06">Kmom06</a></li>
                 {# <li><a href="#kmom07/10">Kmom07/10</a></li> #}
             </ul>
         </div>
@@ -61,7 +61,13 @@
             <p>Min uppfattning om ORM är positiv. Det underlättar utvecklingen genom att erbjuda ett objektorienterat sätt att interagera med databasen. Detta gör det enklare att skriva, läsa och underhålla kod, särskilt i större projekt. Jämfört med att använda råa SQL-frågor innebär ORM mindre kod och färre möjligheter till fel. Men jag kan tänka mig att det kan vara svårt att reda ut om det väl blir fel utan djupare förståelse för databaser.</p>
             <p><strong>TIL:</strong> Konfigurera och använda Doctrine.</p>
             </section>
-            {# <section id="kmom06"><h2>Kmom06</h2><p>Redovisningstext för kmom06</p></section> #}
+            <section id="kmom06"><h2>Kmom06</h2>
+            <p>Jag fann att phpmetrics var ett mycket informativt verktyg för att analysera kodens kvalitet. Den visuella presentationen av olika mättal, som komplexitet och sammanhållning, gav mig en tydlig översikt över var min kod hade förbättringspotential. Särskilt uppskattade jag CRAP-indexet från Phpmetrics, eftersom det kombinerar komplexitet och testtäckning på ett sätt som tydligt visade vilka delar av koden som var mest riskabla och behövde förbättras.</p>
+            <p>Integrationen med Scrutinizer började bra, och jag kunde snabbt få en översikt över mitt projekt med dess kvalitets- och kodtäckningsbetyg. Verktyget fungerade som förväntat under de första två veckorna av provperioden, och jag kunde se uppdateringar i mitt kodtäckningsvärde samt kvalitetspoäng. Däremot stötte jag på problem efter att provperioden avslutades. Jag har haft problem med att inspektioner hänger sig i vissa steg och har kämpat med att få dem att gå igenom genom att trigga nya inspektioner med tomma commits, ändra i konfigurationen för att förhindra att de hänger sig och rensa cache varje gång etc. Jag märkte dock att även när inspektionerna lyckades fullföljas så uppdaterades inte kodtäckningen eller issues som fixed, inte heller dök de nya filerna jag la till upp bland klasser och metoder på scrutinzer. Jag försökte återigen experimentera med scrutizer konfigurationen rädd att jag hade sabbat något tidigare och osäker på om jag behövde lägga in något särskilt kommando för att den ska uppdatera ex kodtäckning vid varje inspektion. Efter alla tester och en del googlande tror jag att detta beror på att provperioden löpt ut och att enda alternativet för att få uppdaterade värden nu vore att betala för en månad vilket jag helst avstår. Jag tror att scurtinizer är ett bra verktyg om man är beredd att betala för det. Jag måste dock säga att jag tycker att det är väldigt känsligt och svårt att konfigurera rätt för ett komplext projekt, det är lätt att man får issues med timeout i de olika installationsmomenten eller om cachen inte rensas korrekt. Det krävs nog viss rutin för att detta verktyg ska fungera optimalt. </p>
+            <p>De första värdena jag fick med scrutinizer var betyget 9.9 och kodtäckning 14.1%. </p>
+            <p>Kodkvalitet är för mig ett brett och viktigt område som handlar om mycket mer än bara att få koden att fungera. Det handlar om att skriva kod som är läsbar, underhållsbar och testbar. Att upprätthålla en hög kodkvalitet innebär att man följer principer som enkelhet, modularitet och tydliga gränssnitt. Jag tror att badges kan vara ett användbart verktyg för att indikera kodkvalitet, särskilt när det gäller att visa att viss grundläggande praxis, som att skriva tester och följa kodstil, har följts. Men jag tror också att de bara ger en del av bilden. Även om en hög kodtäckning eller ett bra betyg på Scrutinizer är positiva indikatorer, måste de kompletteras med regelbundna kodgranskningar och en medvetenhet om den specifika kontexten och behoven i projektet.</p>
+            <p><strong>TIL:</strong> Använda verktyg som Phpmetrics och Scrutinizer för att identifiera och förstå kodens komplexitet, samt hur CRAP-indexet kan hjälpa till att prioritera refaktorisering för att förbättra kodens hållbarhet och kvalitet.</p>
+            </section>
             {# <section id="kmom07/10"><h2>Kmom07/10</h2><p>Redovisningstext för kmom07</p></section> #}
         </div>
     </div>
