@@ -2,36 +2,47 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}{{ title }}{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap" rel="stylesheet">
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('proj') }}
         {% endblock %}
 
         {% block javascripts %}
-            {{ encore_entry_script_tags('app') }}
-            {% block importmap %}{{ importmap('app') }}{% endblock %}
+            {{ encore_entry_script_tags('proj') }}
         {% endblock %}
     </head>
     <body>
-        <div class="outer-container">
-            <header class="site-header">
-                <span class="site-title">Hannas Redovisningssida i kursen MVC</span>
-            </header>
-            <nav>
+        <header class="proj-header">
+            <div class="header-content">
+                <div class="box fish">
+                    <img src="{{ asset('img/main-12.png') }}" alt="Fisk Ikon">
+                </div>
+                <div class="box goal">
+                    <div>Delmål</div>
+                    <div>14</div>
+                </div>
+                <div class="box title">
+                    <div>Hav och marina</div>
+                    <div>resurser</div>
+                </div>
+            </div>    
+            <nav class="proj-navbar">
                 <ul>
-                    <li><a href="{{ path('report') }}">Back to report page</a></li>
                     <li><a href="{{ path('proj_home') }}">Home</a></li>
                     <li><a href="{{ path('proj_about') }}">About</a></li>
+                    <li><a href="{{ path('report') }}">Back to report page</a></li>
                 </ul>
-            </nav>
+            </nav>    
+        </header>
+        <div class="content">
             {% block body %}{% endblock %}
         </div>
     </body>
     <footer class="site-footer">
-        <p>&copy; {{ "now"|date("Y") }} Hannas me-sida. Alla rättigheter förbehållna.</p>
+        <p>&copy; {{ "now"|date("Y") }} Hannas projekt-sida. Alla rättigheter förbehållna.</p>
     </footer>
 </html>
