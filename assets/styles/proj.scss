@@ -10,14 +10,16 @@ body {
     font-style: normal;
 }
 
+/* Footer */
+
 .site-footer {
-    padding: 20px;
+    padding: 20px 60px;
 }
 
-/* HEADER */
+/* Header */
 
 .proj-header {
-    background-color: #91B6E9;
+    background-color: #547097;
     color: #FFFFFF;
     font-weight: 400;
     font-size: 2em;
@@ -43,13 +45,12 @@ body {
     margin: 0;
 }
 
-/* logon */
 .proj-header .header-content .box img {
     max-width: 100px;
     margin-bottom: 10px;
 }
 
-/* NAVBAR */
+/* Navbar */
 
 .proj-navbar {
     display: flex;
@@ -87,7 +88,7 @@ body {
     text-decoration: underline;
 }
 
-/* STARTSIDA */
+/* Grid layout */
 
 .main-content-grid {
     display: grid;

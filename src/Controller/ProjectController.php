@@ -32,4 +32,16 @@ class ProjectController extends AbstractController
             'content' => $content,
         ]);
     }
+
+    #[Route("/proj/data", name: "proj_data")]
+    public function data(MarkdownPageRenderer $renderer): Response
+    {
+        $projectDir = $this->getParameter('kernel.project_dir');
+        $markdownFilePath = $projectDir . '/content/proj/data.md';
+        $content = $renderer->renderPage($markdownFilePath);
+
+        return $this->render('proj/data.html.twig', [
+            'content' => $content,
+        ]);
+    }
 }
