@@ -6,7 +6,43 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ProjectControllerTest extends WebTestCase
 {
-    public function testDataPage()
+    public function testHomeRoute()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj');
+
+        // Kontrollera att sidan laddas utan fel
+        $this->assertResponseIsSuccessful();
+
+        // Kontrollera att rätt template används
+        $this->assertSelectorExists('html'); // Kontrollera att ett html-element finns, vilket indikerar att sidan renderas
+    }
+
+    public function testAboutRoute()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj/about');
+
+        // Kontrollera att sidan laddas utan fel
+        $this->assertResponseIsSuccessful();
+
+        // Kontrollera att rätt template används
+        $this->assertSelectorExists('html'); // Kontrollera att ett html-element finns, vilket indikerar att sidan renderas
+    }
+
+    public function testGoalsRoute()
+    {
+        $client = static::createClient();
+        $client->request('GET', '/proj/goals');
+
+        // Kontrollera att sidan laddas utan fel
+        $this->assertResponseIsSuccessful();
+
+        // Kontrollera att rätt template används
+        $this->assertSelectorExists('html'); // Kontrollera att ett html-element finns, vilket indikerar att sidan renderas
+    }
+
+    public function testDataRoute()
     {
         $client = static::createClient();
         $crawler = $client->request('GET', '/data');
