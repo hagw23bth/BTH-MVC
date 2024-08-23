@@ -29,6 +29,6 @@ class MarkdownParser
             throw new \RuntimeException(sprintf('Failed to read the file "%s".', $filePath));
         }
 
-        return $this->converter->convertToHtml($markdownContent);
+        return $this->converter->convert($markdownContent);
     }
 }

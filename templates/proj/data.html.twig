@@ -6,6 +6,22 @@
     <div class="main-content-grid">
         <div class="content-column">
             {{ content|raw }}
+
+            <!-- Canvas för att visa grafen -->
+            <canvas id="fishStockChart" width="400" height="200"></canvas>
+
+            {% block javascripts %}
+            {{ encore_entry_script_tags('proj') }}
+
+            <!-- JSON data för grafen -->
+            <script id="fishStockData" type="application/json">
+                {% if fishStockData is not empty %}
+                    {{ fishStockData|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
+                {% else %}
+                    console.error('No data available');
+                {% endif %}
+            </script>
+            {% endblock %}
         </div>
         <div class="image-column">
             <img src="{{ asset('img/hav3.JPG') }}" alt="Bild 3">

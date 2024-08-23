@@ -10,7 +10,6 @@
         {% block stylesheets %}
             {{ encore_entry_link_tags('proj') }}
         {% endblock %}
-
         {% block javascripts %}
             {{ encore_entry_script_tags('proj') }}
         {% endblock %}
@@ -34,6 +33,7 @@
                 <ul>
                     <li><a href="{{ path('proj_home') }}">Home</a></li>
                     <li><a href="{{ path('proj_about') }}">About</a></li>
+                    <li><a href="{{ path('proj_indicators') }}">Indicators</a></li>
                     <li><a href="{{ path('proj_data') }}">Data</a></li>
                     <li><a href="{{ path('report') }}">Back to report page</a></li>
                 </ul>
