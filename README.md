@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <div align="center">
   
   <img src="app/public/img/profilecircle.png" alt="Bild på mig" width="100">
@@ -69,9 +68,13 @@ npm install
 npm run build
 ```
 
-**Starta den lokala utvecklingsservern:**:
+**För att köra projektet lokalt::**:
 
 Använd PHP:s inbyggda server för att snabbt starta din applikation:
+
+```bash
+symfony server:start
+```
 
 ```bash
 php -S localhost:8080 -t public
@@ -86,7 +89,11 @@ php -S localhost:8080 -t public
 
 ## Tester
 
-... Här kommer instruktioner om hur man kör sidans tester
+För att köra projektets enhetstester:
+
+```bash
+php bin/phpunit
+```
 
 # Länkar
 ## Kursrepo Github 
@@ -94,7 +101,4 @@ https://github.com/dbwebb-se/mvc
 
 ## Mitt repo på Github 
 https://github.com/hagw23bth/BTH-MVC/tree/master
-=======
-# BTH-MVC
->>>>>>> origin/main
 
