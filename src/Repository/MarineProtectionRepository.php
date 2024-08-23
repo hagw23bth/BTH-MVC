@@ -16,28 +16,26 @@ class MarineProtectionRepository extends ServiceEntityRepository
         parent::__construct($registry, MarineProtection::class);
     }
 
-    //    /**
-    //     * @return MarineProtection[] Returns an array of MarineProtection objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('m')
-    //            ->andWhere('m.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('m.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+    /**
+     * Hämta alla data om marint skydd.
+     *
+     * @return array
+     */
+    public function findAllMarineProtectionData(): array
+    {
+        $results = $this->createQueryBuilder('m')
+            ->orderBy('m.year', 'ASC')
+            ->getQuery()
+            ->getResult();
 
-    //    public function findOneBySomeField($value): ?MarineProtection
-    //    {
-    //        return $this->createQueryBuilder('m')
-    //            ->andWhere('m.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+        return array_map(function ($protection) {
+            return [
+                'year' => $protection->getYear(),
+                'riket' => $protection->getNationwidePercent(),
+                'vasterhavet' => $protection->getVästerhavetPercent(),
+                'ostersjon' => $protection->getöstersjönPercent(),
+                'bottniska_viken' => $protection->getBottniskaVikenPercent(),
+            ];
+        }, $results);
+    }
 }

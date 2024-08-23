@@ -7,7 +7,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Service\MarkdownPageRenderer;
 use App\Entity\FishStock;
+use App\Entity\MarineProtection;
 use App\Repository\FishStockRepository;
+use App\Repository\MarineProtectionRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 class ProjectController extends AbstractController
@@ -49,17 +51,20 @@ class ProjectController extends AbstractController
     }
 
     #[Route("/data", name: "proj_data")]
-    public function data(MarkdownPageRenderer $renderer, FishStockRepository $fishStockRepository): Response
+    public function data(MarkdownPageRenderer $renderer, FishStockRepository $fishStockRepository, MarineProtectionRepository $marineProtectionRepository): Response
     {
         $projectDir = $this->getParameter('kernel.project_dir');
         $markdownFilePath = $projectDir . '/content/proj/data.md';
         $content = $renderer->renderPage($markdownFilePath);
 
-        // Använder metod i repostery för att hämta data
+        // Hämta data om fiskbestånd och marint skydd
         $fishStockArray = $fishStockRepository->findAllSortedByYearAsArray();
+        $marineProtectionData = $marineProtectionRepository->findAllMarineProtectionData();
+
         return $this->render('proj/data.html.twig', [
             'content' => $content,
             'fishStockData' => $fishStockArray,
+            'marineProtectionData' => $marineProtectionData,
         ]);
     }
 }
