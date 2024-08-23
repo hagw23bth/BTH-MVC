@@ -112,3 +112,64 @@ if (marineCtx) {
         }
     });
 }
+
+
+// Data för senaste året
+const data2022 = {
+    labels: ['Skyddat', 'Ej skyddat'],
+    datasets: [
+        {
+            label: 'Riket',
+            data: [14, 86], // Procent för skyddat och ej skyddat
+            backgroundColor: ['#36a2eb', '#ff6384']
+        },
+        {
+            label: 'Västerhavet',
+            data: [32, 68],
+            backgroundColor: ['#36a2eb', '#ff6384']
+        },
+        {
+            label: 'Östersjön',
+            data: [17, 83],
+            backgroundColor: ['#36a2eb', '#ff6384']
+        },
+        {
+            label: 'Bottniska viken',
+            data: [5, 95],
+            backgroundColor: ['#36a2eb', '#ff6384']
+        }
+    ]
+};
+
+// Skapa cirkeldiagram för varje område
+new Chart(document.getElementById('riketChart'), {
+    type: 'pie',
+    data: {
+        labels: data2022.labels,
+        datasets: [data2022.datasets[0]]
+    }
+});
+
+new Chart(document.getElementById('västerhavetChart'), {
+    type: 'pie',
+    data: {
+        labels: data2022.labels,
+        datasets: [data2022.datasets[1]]
+    }
+});
+
+new Chart(document.getElementById('östersjönChart'), {
+    type: 'pie',
+    data: {
+        labels: data2022.labels,
+        datasets: [data2022.datasets[2]]
+    }
+});
+
+new Chart(document.getElementById('bottniskaVikenChart'), {
+    type: 'pie',
+    data: {
+        labels: data2022.labels,
+        datasets: [data2022.datasets[3]]
+    }
+});

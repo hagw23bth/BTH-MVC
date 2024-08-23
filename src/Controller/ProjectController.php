@@ -38,14 +38,14 @@ class ProjectController extends AbstractController
         ]);
     }
 
-    #[Route("/proj/indicators", name: "proj_indicators")]
+    #[Route("/proj/goals", name: "proj_goals")]
     public function indicators(MarkdownPageRenderer $renderer): Response
     {
         $projectDir = $this->getParameter('kernel.project_dir');
-        $markdownFilePath = $projectDir . '/content/proj/indicators.md';
+        $markdownFilePath = $projectDir . '/content/proj/goals.md';
         $content = $renderer->renderPage($markdownFilePath);
 
-        return $this->render('proj/indicators.html.twig', [
+        return $this->render('proj/goals.html.twig', [
             'content' => $content,
         ]);
     }

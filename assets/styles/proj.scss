@@ -10,6 +10,11 @@ body {
     font-style: normal;
 }
 
+body p {
+    font-family: "Noto", serif;
+    font-style: normal;
+}
+
 /* Footer */
 
 .site-footer {
@@ -94,11 +99,10 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 20px;
-    padding: 20px;
+    padding: 5rem 15rem;
 }
 
 .content-column {
-    padding: 40px;
     background-color: #fff;
     color: #333;
     border-radius: 8px;
@@ -118,10 +122,10 @@ body {
     object-fit: cover;
 }
 
-/* Indicators grid */
+/* Goals Page */
 
 .goals-page {
-    padding: 60px;
+    padding: 5rem 15rem;
 }
 
 .goals-grid {
@@ -174,4 +178,40 @@ body {
     .goal-container {
         grid-template-columns: 1fr;
     }
+}
+
+/* Data Page */
+
+.data-page {
+    padding: 5rem 15rem;
+}
+
+.chart-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.circle-charts-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.chart-container canvas, .circle-chart canvas {
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+.circle-chart {
+    flex: 1;
+    max-width: 200px;
+    text-align: center;
+    margin: 10px;
+}
+
+.chart-label {
+    padding-top: 40px;
 }

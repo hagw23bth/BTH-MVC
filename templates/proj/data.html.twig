@@ -3,32 +3,60 @@
 {% block title %}Data page{% endblock %}
 
 {% block body %}
-    <div class="main-content-grid">
-        <div class="content-column">
-            {{ content|raw }}
+    <div class="data-page">
+        {{ content|raw }}
 
-            <!-- Canvas för att visa fiskbeståndsgrafen -->
+        <h2 class="chart-label">Andelen fiskbestånd inom en biologiskt hållbar nivå</h2>
+        <!-- Canvas för att visa Fish Stock -->
+        <div class="chart-container">
             <canvas id="fishStockChart" width="400" height="200"></canvas>
+        </div>
+        
+        <p>Linjediagram som illustrerar hur andelarna av hållbara fiskebestånd utvecklats mellan åren 2015 och 2021.</p>
 
-            <!-- JSON för fiskbestånd -->
-            <script id="fishStockData" type="application/json">
-                {{ fishStockData|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
-            </script>
+        <!-- JSON för Fish Stock -->
+        <script id="fishStockData" type="application/json">
+            {{ fishStockData|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
+        </script>
 
-                        <!-- Canvas för att visa marint skyddsgrafen -->
+        <h2 class="chart-label">Täckning av skyddade områden i förhållande till marina områden</h2>
+
+        <!-- Canvas för att visa Marine Protection -->
+        <div class="chart-container">
             <canvas id="marineProtectionChart" width="400" height="200"></canvas>
-
-            <!-- JSON för marint skydd -->
-            <script id="marineProtectionData" type="application/json">
-                {{ marineProtectionData|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
-            </script>
-
-            {% block javascripts %}
-                {{ encore_entry_script_tags('proj') }}
-            {% endblock %}
         </div>
-        <div class="image-column">
-            <img src="{{ asset('img/hav3.JPG') }}" alt="Bild 3">
+
+        <p>Stapeldiagram som illustrerar hur andelarna av skyddade marina områden utvecklats mellan åren 2018 och 2022.</p>
+
+        <!-- Canvas för cirkeldiagram Marine Protection-->
+        <div class="circle-charts-container">
+            <div class="circle-chart">
+                <h3>Riket</h3>
+                <canvas id="riketChart"></canvas>
+            </div>
+            <div class="circle-chart">
+                <h3>Västerhavet</h3>
+                <canvas id="västerhavetChart"></canvas>
+            </div>
+            <div class="circle-chart">
+                <h3>Östersjön</h3>
+                <canvas id="östersjönChart"></canvas>
+            </div>
+            <div class="circle-chart">
+                <h3>Bottniska viken</h3>
+                <canvas id="bottniskaVikenChart"></canvas>
+            </div>
         </div>
+        <p>Cirkeldiagram som illustrerar andelarna av skyddade marina områden för år 2022.</p>
+
+
+        <!-- JSON för Marine Protection -->
+        <script id="marineProtectionData" type="application/json">
+            {{ marineProtectionData|json_encode(constant('JSON_PRETTY_PRINT'))|raw }}
+        </script>
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('proj') }}
+        {% endblock %}
     </div>
 {% endblock %}
