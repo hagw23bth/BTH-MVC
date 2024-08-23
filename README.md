@@ -20,6 +20,20 @@ Projektet använder följande teknologier och verktyg:
 - **Databas**: MariaDB, SQLite
 - **Utvecklingsverktyg**: Symfony Webpack Encore för frontend-resurshantering, inklusive kompilering av SASS/SCSS till CSS.
 
+## Beroenden
+
+Projektet använder följande beroenden:
+
+	•	doctrine/orm
+	•	symfony/framework-bundle
+	•	symfony/twig-bundle
+	•	symfony/maker-bundle
+	•	symfony/console
+	•	symfony/phpunit-bridge
+	•	phpunit/phpunit
+	•	symfony/webpack-encore-bundle
+	•	symfony/doctrine-fixtures-bundle
+
 # Instruktioner 
 ## Komma Igång
 
@@ -70,15 +84,21 @@ npm run build
 
 **För att köra projektet lokalt::**:
 
-Använd PHP:s inbyggda server för att snabbt starta din applikation:
+Du kan använda Symfony CLI eller PHP:s inbyggda server för att snabbt starta applikationen. Här är två alternativ:
+
+	1.	Använd Symfony CLI:
 
 ```bash
 symfony server:start
 ```
 
+	2.	Använd PHP:s inbyggda server:
+
 ```bash
 php -S localhost:8080 -t public
 ```
+
+Båda alternativen startar applikationen och gör den tillgänglig på http://localhost:8080.
 
 ## Scrutinizer badges:
 
