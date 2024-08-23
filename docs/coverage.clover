@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1724439634">
-  <project timestamp="1724439634">
+<coverage generated="1724447951">
+  <project timestamp="1724447951">
     <file name="/Users/hannagawlitza/dbwebb-kurser/mvc/me/report/src/Card/Card.php">
       <class name="App\Card\Card" namespace="global">
         <metrics complexity="5" methods="5" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="9" coveredstatements="9" elements="14" coveredelements="14"/>
@@ -529,25 +529,25 @@
       <class name="App\Entity\FishStock" namespace="global">
         <metrics complexity="9" methods="9" coveredmethods="5" conditionals="0" coveredconditionals="0" statements="13" coveredstatements="5" elements="22" coveredelements="10"/>
       </class>
-      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="30" type="stmt" count="1"/>
-      <line num="33" type="method" name="getYear" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="35" type="stmt" count="1"/>
+      <line num="28" type="method" name="getId" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="30" type="stmt" count="2"/>
+      <line num="33" type="method" name="getYear" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="35" type="stmt" count="2"/>
       <line num="38" type="method" name="setYear" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="40" type="stmt" count="0"/>
       <line num="42" type="stmt" count="0"/>
-      <line num="45" type="method" name="getSustainablePercent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="47" type="stmt" count="1"/>
+      <line num="45" type="method" name="getSustainablePercent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="47" type="stmt" count="2"/>
       <line num="50" type="method" name="setSustainablePercent" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="52" type="stmt" count="0"/>
       <line num="54" type="stmt" count="0"/>
-      <line num="57" type="method" name="getSustainableCount" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="59" type="stmt" count="1"/>
+      <line num="57" type="method" name="getSustainableCount" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="59" type="stmt" count="2"/>
       <line num="62" type="method" name="setSustainableCount" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="64" type="stmt" count="0"/>
       <line num="66" type="stmt" count="0"/>
-      <line num="69" type="method" name="getTotalCount" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="71" type="stmt" count="1"/>
+      <line num="69" type="method" name="getTotalCount" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="71" type="stmt" count="2"/>
       <line num="74" type="method" name="setTotalCount" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="76" type="stmt" count="0"/>
       <line num="78" type="stmt" count="0"/>
@@ -559,28 +559,28 @@
       </class>
       <line num="31" type="method" name="getId" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="33" type="stmt" count="0"/>
-      <line num="36" type="method" name="getYear" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="38" type="stmt" count="1"/>
+      <line num="36" type="method" name="getYear" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="38" type="stmt" count="2"/>
       <line num="41" type="method" name="setYear" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="43" type="stmt" count="0"/>
       <line num="45" type="stmt" count="0"/>
-      <line num="48" type="method" name="getNationwidePercent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="50" type="stmt" count="1"/>
+      <line num="48" type="method" name="getNationwidePercent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="50" type="stmt" count="2"/>
       <line num="53" type="method" name="setNationwidePercent" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="55" type="stmt" count="0"/>
       <line num="57" type="stmt" count="0"/>
-      <line num="60" type="method" name="getVästerhavetPercent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="62" type="stmt" count="1"/>
+      <line num="60" type="method" name="getVästerhavetPercent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="62" type="stmt" count="2"/>
       <line num="65" type="method" name="setVästerhavetPercent" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="67" type="stmt" count="0"/>
       <line num="69" type="stmt" count="0"/>
-      <line num="72" type="method" name="getöstersjönPercent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="74" type="stmt" count="1"/>
+      <line num="72" type="method" name="getöstersjönPercent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="74" type="stmt" count="2"/>
       <line num="77" type="method" name="setöstersjönPercent" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="79" type="stmt" count="0"/>
       <line num="81" type="stmt" count="0"/>
-      <line num="84" type="method" name="getBottniskaVikenPercent" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="86" type="stmt" count="1"/>
+      <line num="84" type="method" name="getBottniskaVikenPercent" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="86" type="stmt" count="2"/>
       <line num="89" type="method" name="setBottniskaVikenPercent" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="91" type="stmt" count="0"/>
       <line num="93" type="stmt" count="0"/>
@@ -695,44 +695,44 @@
       <class name="App\Repository\FishStockRepository" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="16" coveredelements="16"/>
       </class>
-      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="24" type="method" name="findAllSortedByYearAsArray" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="26" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="33" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="36" type="stmt" count="1"/>
-      <line num="37" type="stmt" count="1"/>
-      <line num="38" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="24" type="method" name="findAllSortedByYearAsArray" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="33" type="stmt" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
       <metrics loc="42" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="16" coveredelements="16"/>
     </file>
     <file name="/Users/hannagawlitza/dbwebb-kurser/mvc/me/report/src/Repository/MarineProtectionRepository.php">
       <class name="App\Repository\MarineProtectionRepository" namespace="global">
         <metrics complexity="2" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="16" coveredelements="16"/>
       </class>
-      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="16" type="stmt" count="1"/>
-      <line num="24" type="method" name="findAllMarineProtectionData" visibility="public" complexity="1" crap="1" count="1"/>
-      <line num="26" type="stmt" count="1"/>
-      <line num="27" type="stmt" count="1"/>
-      <line num="28" type="stmt" count="1"/>
-      <line num="29" type="stmt" count="1"/>
-      <line num="31" type="stmt" count="1"/>
-      <line num="32" type="stmt" count="1"/>
-      <line num="33" type="stmt" count="1"/>
-      <line num="34" type="stmt" count="1"/>
-      <line num="35" type="stmt" count="1"/>
-      <line num="36" type="stmt" count="1"/>
-      <line num="37" type="stmt" count="1"/>
-      <line num="38" type="stmt" count="1"/>
-      <line num="39" type="stmt" count="1"/>
+      <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="16" type="stmt" count="2"/>
+      <line num="24" type="method" name="findAllMarineProtectionData" visibility="public" complexity="1" crap="1" count="2"/>
+      <line num="26" type="stmt" count="2"/>
+      <line num="27" type="stmt" count="2"/>
+      <line num="28" type="stmt" count="2"/>
+      <line num="29" type="stmt" count="2"/>
+      <line num="31" type="stmt" count="2"/>
+      <line num="32" type="stmt" count="2"/>
+      <line num="33" type="stmt" count="2"/>
+      <line num="34" type="stmt" count="2"/>
+      <line num="35" type="stmt" count="2"/>
+      <line num="36" type="stmt" count="2"/>
+      <line num="37" type="stmt" count="2"/>
+      <line num="38" type="stmt" count="2"/>
+      <line num="39" type="stmt" count="2"/>
       <metrics loc="42" ncloc="34" classes="1" methods="2" coveredmethods="2" conditionals="0" coveredconditionals="0" statements="14" coveredstatements="14" elements="16" coveredelements="16"/>
     </file>
     <file name="/Users/hannagawlitza/dbwebb-kurser/mvc/me/report/src/Service/MarkdownPageRenderer.php">
