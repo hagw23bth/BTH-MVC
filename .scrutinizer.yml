@@ -78,7 +78,7 @@ build:
                     - command: "composer install --no-interaction --prefer-dist -vvv"
                     - command: "php bin/console doctrine:database:create --env=test"
                     - command: "php bin/console doctrine:migrations:migrate --env=test --no-interaction"
-                    - command: "php bin/console doctrine:fixtures:load --env=test"
+                    - command: "php bin/console doctrine:fixtures:load --env=test --no-interaction"
                     - command: "rm -rf docs/coverage.clover"
                     - command: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=docs/coverage.clover"
                     - command: "composer phpunit --coverage-clover=docs/coverage.clover"
