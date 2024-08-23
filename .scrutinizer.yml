@@ -72,6 +72,8 @@ build:
                 variables:
                     COMPOSER_ALLOW_SUPERUSER: 1
                     COMPOSER_MEMORY_LIMIT: -1
+                node:
+                    version: 14
             tests:
                 override:
                     - command: "composer clear-cache"
@@ -79,8 +81,6 @@ build:
                     - command: "php bin/console doctrine:database:create --env=test"
                     - command: "php bin/console doctrine:migrations:migrate --env=test --no-interaction"
                     - command: "php bin/console doctrine:fixtures:load --env=test --no-interaction"
-                    - command: "npm install"
-                    - command: "npm run build"
                     - command: "rm -rf docs/coverage.clover"
                     - command: "XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover=docs/coverage.clover"
                     - command: "composer phpunit --coverage-clover=docs/coverage.clover"
