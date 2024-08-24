@@ -108,6 +108,7 @@ build:
                     version: 14
             tests:
                 override:
+                    - command: "composer self-update --2"  # Upgrade to Composer 2
                     - command: "composer clear-cache"
                     - command: "composer install --no-interaction --prefer-dist -vvv"
                     - command: "php bin/console cache:clear --env=test"
@@ -120,8 +121,7 @@ build:
         analysis:
             tests:
                 override:
-                    - php-scrutinizer-run  # Ensure this command is needed and correctly configured for your project
-                    #- phpcs-run  # Uncomment if you plan to add a PHP CodeSniffer configuration
+                    - php-scrutinizer-run
 
     tests:
         override:
