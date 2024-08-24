@@ -119,12 +119,17 @@ build:
                     - command: "composer phpunit --coverage-clover=docs/coverage.clover"
 
         analysis:
+            environment:
+                php:
+                    version: 8.3.3
+                node:
+                    version: 14
             tests:
                 override:
                     - command: "composer self-update --2"
                     - command: "composer clear-cache"
                     - command: "composer install --no-interaction --prefer-dist -vvv"
-                    - php-scrutinizer-run
+                    - command: "php-scrutinizer-run"
 
     tests:
         override:
