@@ -106,9 +106,10 @@ build:
                     COMPOSER_MEMORY_LIMIT: -1
                 node:
                     version: 14
+                before_install:
+                    - command: "composer self-update --2"
             tests:
                 override:
-                    - command: "composer self-update --2"  # Upgrade to Composer 2
                     - command: "composer clear-cache"
                     - command: "composer install --no-interaction --prefer-dist -vvv"
                     - command: "php bin/console cache:clear --env=test"
