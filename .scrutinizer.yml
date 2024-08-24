@@ -91,7 +91,13 @@ imports:
     - php
 
 filter:
-    excluded_paths: [vendor/*, test/*]
+    excluded_paths:
+        - vendor/*
+        - var/cache/*
+        - var/log/*
+        - var/sessions/*
+        - public/build/*
+        - dev/twig/*
 
 build:
     image: default-bionic
