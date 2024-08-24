@@ -78,6 +78,7 @@ build:
                 override:
                     - command: "composer clear-cache"
                     - command: "composer install --no-interaction --prefer-dist -vvv"
+                    - command: "php bin/console cache:clear --env=test"
                     - command: "npm ci"
                     - command: "npm run build"
                     - command: "rm -rf docs/coverage.clover"
