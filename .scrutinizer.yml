@@ -121,6 +121,9 @@ build:
         analysis:
             tests:
                 override:
+                    - command: "composer self-update --2"
+                    - command: "composer clear-cache"
+                    - command: "composer install --no-interaction --prefer-dist -vvv"
                     - php-scrutinizer-run
 
     tests:
