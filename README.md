@@ -22,18 +22,18 @@ Projektet använder följande teknologier och verktyg:
 ## Beroenden
 
 PHP-bibliotek:
-	•	doctrine/orm
-	•	symfony/framework-bundle
-	•	symfony/twig-bundle
-	•	symfony/maker-bundle
-	•	symfony/console
-	•	symfony/phpunit-bridge
-	•	phpunit/phpunit
-	•	symfony/webpack-encore-bundle
-	•	symfony/doctrine-fixtures-bundle
+- doctrine/orm
+- symfony/framework-bundle
+- symfony/twig-bundle
+- symfony/maker-bundle
+- symfony/console
+- symfony/phpunit-bridge
+- phpunit/phpunit
+- symfony/webpack-encore-bundle
+- symfony/doctrine-fixtures-bundle
 
 JavaScript-bibliotek:
-	•	chart.js
+- chart.js
 
 ## Databas
 
