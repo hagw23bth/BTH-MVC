@@ -334,3 +334,31 @@ Det finns flera sätt att fortsätta arbeta med kodkvalitet och "clean code":
 - **Automatiserade verktyg**: Fortsätta att använda och utvärdera nya verktyg för statisk kodanalys och testtäckning.
 
 Sammanfattningsvis har denna övning visat att verktyg som Phpmetrics och Scrutinizer kan vara till stor hjälp i arbetet med att förbättra kodkvaliteten. Genom att fortsätta följa principerna för "clean code" kan vi göra vår kodbas mer robust, underhållbar och lätt att förstå.
+
+## Uppdaterad metrics för kursens projekt
+
+### Uppdaterade Scrutinizer badges:
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
+[![Code Coverage](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/build.png?b=master)](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/build-status/master)
+[![Code Intelligence Status](https://scrutinizer-ci.com/g/hagw23bth/BTH-MVC/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+
+### Testtäckning:
+
+För projektet skapde jag testfiler följande testifler som alla uppnår 100% testtäckning för de filer de är ämnade att testa:
+
+- tests/Controller/ProjectControllerTest.php för att testa src/Controller/ProjectController.php
+- tests/Repository/FishStockRepositoryTest.php för att testa src/Repository/FishStockRepository.php
+- tests/Repository/MarineProtectionRepositoryTest.php för att testa src/Repository/MarineProtectionRepository.php
+
+<div class="image-container">
+    <img src="img/metrics_proj_1.png" alt="metrics_proj_1" class="metrics-wide">
+</div>
+<div class="image-container">
+    <img src="img/metrics_proj_2.png" alt="metrics_proj_2" class="metrics-wide">
+</div>
+<div class="image-container">
+    <img src="img/metrics_proj_3.png" alt="metrics_proj_1" class="metrics-wide">
+</div>
+

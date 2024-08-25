@@ -56,21 +56,20 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-        <link href=\"https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Noto+Serif+Khitan+Small+Script&display=swap\" rel=\"stylesheet\">        
-        ";
-        // line 10
+        <link href=\"https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khitan+Small+Script&display=swap\" rel=\"stylesheet\">        ";
+        // line 9
         yield from $this->unwrap()->yieldBlock('stylesheets', $context, $blocks);
-        // line 13
+        // line 12
         yield "        ";
         yield from $this->unwrap()->yieldBlock('javascripts', $context, $blocks);
-        // line 16
+        // line 15
         yield "    </head>
     <body>
         <header class=\"proj-header\">
             <div class=\"header-content\">
                 <div class=\"box fish\">
                     <img src=\"";
-        // line 21
+        // line 20
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("img/main-12.png"), "html", null, true);
         yield "\" alt=\"Fisk Ikon\">
                 </div>
@@ -86,23 +85,23 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
             <nav class=\"proj-navbar\">
                 <ul>
                     <li><a href=\"";
-        // line 34
+        // line 33
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_home");
         yield "\">Home</a></li>
                     <li><a href=\"";
-        // line 35
+        // line 34
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_about");
         yield "\">About</a></li>
                     <li><a href=\"";
-        // line 36
+        // line 35
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_goals");
         yield "\">Goals</a></li>
                     <li><a href=\"";
-        // line 37
+        // line 36
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("proj_data");
         yield "\">Data</a></li>
                     <li><a href=\"";
-        // line 38
+        // line 37
         yield $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("report");
         yield "\">Back to report page</a></li>
                 </ul>
@@ -110,14 +109,14 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         </header>
         <div class=\"content\">
             ";
-        // line 43
+        // line 42
         yield from $this->unwrap()->yieldBlock('body', $context, $blocks);
-        // line 44
+        // line 43
         yield "        </div>
     </body>
     <footer class=\"site-footer\">
         <p>&copy; ";
-        // line 47
+        // line 46
         yield $this->env->getRuntime('Twig\Runtime\EscaperRuntime')->escape($this->extensions['Twig\Extension\CoreExtension']->formatDate("now", "Y"), "html", null, true);
         yield " Hannas projekt-sida. Alla rättigheter förbehållna.</p>
     </footer>
@@ -152,7 +151,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         return; yield '';
     }
 
-    // line 10
+    // line 9
     public function block_stylesheets($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -162,7 +161,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheets"));
 
-        // line 11
+        // line 10
         yield "            ";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("proj");
         yield "
@@ -176,7 +175,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         return; yield '';
     }
 
-    // line 13
+    // line 12
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -186,7 +185,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_6f47bbe9983af81f1e7450e9a3e3768f->enter($__internal_6f47bbe9983af81f1e7450e9a3e3768f_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 14
+        // line 13
         yield "            ";
         yield $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("proj");
         yield "
@@ -200,7 +199,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         return; yield '';
     }
 
-    // line 43
+    // line 42
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -240,7 +239,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
      */
     public function getDebugInfo()
     {
-        return array (  204 => 43,  190 => 14,  180 => 13,  166 => 11,  156 => 10,  136 => 5,  121 => 47,  116 => 44,  114 => 43,  106 => 38,  102 => 37,  98 => 36,  94 => 35,  90 => 34,  74 => 21,  67 => 16,  64 => 13,  62 => 10,  54 => 5,  48 => 1,);
+        return array (  203 => 42,  189 => 13,  179 => 12,  165 => 10,  155 => 9,  135 => 5,  120 => 46,  115 => 43,  113 => 42,  105 => 37,  101 => 36,  97 => 35,  93 => 34,  89 => 33,  73 => 20,  66 => 15,  63 => 12,  61 => 9,  54 => 5,  48 => 1,);
     }
 
     public function getSourceContext()
@@ -253,8 +252,7 @@ class __TwigTemplate_f3f58589caf5a73fc968d6d3c58c738f extends Template
         <link rel=\"icon\" href=\"data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>\">
         <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">
         <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>
-        <link href=\"https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Noto+Serif+Khitan+Small+Script&display=swap\" rel=\"stylesheet\">        
-        {% block stylesheets %}
+        <link href=\"https://fonts.googleapis.com/css2?family=New+Amsterdam&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Noto+Serif+Khitan+Small+Script&display=swap\" rel=\"stylesheet\">        {% block stylesheets %}
             {{ encore_entry_link_tags('proj') }}
         {% endblock %}
         {% block javascripts %}

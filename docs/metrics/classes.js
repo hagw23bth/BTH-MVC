@@ -72,10 +72,157 @@ var classes = [
         "totalDataComplexity": 0.89,
         "totalSystemComplexity": 192.89,
         "package": "App\\Repository\\",
-        "pageRank": 0.03,
+        "pageRank": 0.02,
         "afferentCoupling": 2,
         "efferentCoupling": 2,
         "instability": 0.5,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Repository\\FishStockRepository",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "findAllSortedByYearAsArray",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 2,
+        "nbMethods": 2,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 2,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 2,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "Doctrine\\Persistence\\ManagerRegistry"
+        ],
+        "parents": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"
+        ],
+        "implements": [],
+        "lcom": 2,
+        "length": 22,
+        "vocabulary": 14,
+        "volume": 83.76,
+        "difficulty": 1.58,
+        "effort": 132.62,
+        "level": 0.63,
+        "bugs": 0.03,
+        "time": 7,
+        "intelligentContent": 52.9,
+        "number_operators": 3,
+        "number_operands": 19,
+        "number_operators_unique": 2,
+        "number_operands_unique": 12,
+        "cloc": 8,
+        "loc": 23,
+        "lloc": 15,
+        "mi": 100.33,
+        "mIwoC": 60.75,
+        "commentWeight": 39.59,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 100,
+        "relativeDataComplexity": 0.23,
+        "relativeSystemComplexity": 100.23,
+        "totalStructuralComplexity": 200,
+        "totalDataComplexity": 0.45,
+        "totalSystemComplexity": 200.45,
+        "package": "App\\Repository\\",
+        "pageRank": 0.02,
+        "afferentCoupling": 1,
+        "efferentCoupling": 2,
+        "instability": 0.67,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Repository\\MarineProtectionRepository",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "findAllMarineProtectionData",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 2,
+        "nbMethods": 2,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 2,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 2,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository",
+            "Doctrine\\Persistence\\ManagerRegistry"
+        ],
+        "parents": [
+            "Doctrine\\Bundle\\DoctrineBundle\\Repository\\ServiceEntityRepository"
+        ],
+        "implements": [],
+        "lcom": 2,
+        "length": 22,
+        "vocabulary": 14,
+        "volume": 83.76,
+        "difficulty": 1.58,
+        "effort": 132.62,
+        "level": 0.63,
+        "bugs": 0.03,
+        "time": 7,
+        "intelligentContent": 52.9,
+        "number_operators": 3,
+        "number_operands": 19,
+        "number_operators_unique": 2,
+        "number_operands_unique": 12,
+        "cloc": 8,
+        "loc": 23,
+        "lloc": 15,
+        "mi": 100.33,
+        "mIwoC": 60.75,
+        "commentWeight": 39.59,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 100,
+        "relativeDataComplexity": 0.23,
+        "relativeSystemComplexity": 100.23,
+        "totalStructuralComplexity": 200,
+        "totalDataComplexity": 0.45,
+        "totalSystemComplexity": 200.45,
+        "package": "App\\Repository\\",
+        "pageRank": 0.02,
+        "afferentCoupling": 1,
+        "efferentCoupling": 2,
+        "instability": 0.67,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -156,10 +303,11 @@ var classes = [
         "totalDataComplexity": 7.33,
         "totalSystemComplexity": 27.33,
         "package": "App\\Card\\",
-        "pageRank": 0.4,
+        "pageRank": 0.37,
         "afferentCoupling": 2,
         "efferentCoupling": 0,
         "instability": 0,
+        "numberOfUnitTests": 4,
         "violations": {}
     },
     {
@@ -220,10 +368,11 @@ var classes = [
         "totalDataComplexity": 0.33,
         "totalSystemComplexity": 4.33,
         "package": "App\\Card\\",
-        "pageRank": 0.19,
+        "pageRank": 0.17,
         "afferentCoupling": 1,
         "efferentCoupling": 1,
         "instability": 0.5,
+        "numberOfUnitTests": 15,
         "violations": {}
     },
     {
@@ -317,10 +466,110 @@ var classes = [
         "totalDataComplexity": 6,
         "totalSystemComplexity": 60,
         "package": "App\\Card\\",
-        "pageRank": 0.1,
+        "pageRank": 0.08,
         "afferentCoupling": 5,
         "efferentCoupling": 1,
         "instability": 0.17,
+        "numberOfUnitTests": 9,
+        "violations": {}
+    },
+    {
+        "name": "App\\Entity\\FishStock",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "getId",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getYear",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setYear",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getSustainablePercent",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setSustainablePercent",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getSustainableCount",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setSustainableCount",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getTotalCount",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setTotalCount",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 9,
+        "nbMethods": 0,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 0,
+        "nbMethodsGetter": 5,
+        "nbMethodsSetters": 4,
+        "wmc": 0,
+        "ccn": 1,
+        "ccnMethodMax": 0,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 0,
+        "length": 34,
+        "vocabulary": 7,
+        "volume": 95.45,
+        "difficulty": 4.2,
+        "effort": 400.89,
+        "level": 0.24,
+        "bugs": 0.03,
+        "time": 22,
+        "intelligentContent": 22.73,
+        "number_operators": 13,
+        "number_operands": 21,
+        "number_operators_unique": 2,
+        "number_operands_unique": 5,
+        "cloc": 8,
+        "loc": 57,
+        "lloc": 49,
+        "mi": 76.55,
+        "mIwoC": 49.13,
+        "commentWeight": 27.42,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 0,
+        "relativeDataComplexity": 9.44,
+        "relativeSystemComplexity": 9.44,
+        "totalStructuralComplexity": 0,
+        "totalDataComplexity": 85,
+        "totalSystemComplexity": 85,
+        "package": "App\\Entity\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -419,6 +668,182 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 0,
         "instability": 0,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Entity\\MarineProtection",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "getId",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getYear",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setYear",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getNationwidePercent",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setNationwidePercent",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getV\u00e4sterhavetPercent",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setV\u00e4sterhavetPercent",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "get\u00f6stersj\u00f6nPercent",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "set\u00f6stersj\u00f6nPercent",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "getBottniskaVikenPercent",
+                "role": "getter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "setBottniskaVikenPercent",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 11,
+        "nbMethods": 0,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 0,
+        "nbMethodsGetter": 6,
+        "nbMethodsSetters": 5,
+        "wmc": 0,
+        "ccn": 1,
+        "ccnMethodMax": 0,
+        "externals": [],
+        "parents": [],
+        "implements": [],
+        "lcom": 0,
+        "length": 42,
+        "vocabulary": 8,
+        "volume": 126,
+        "difficulty": 4.33,
+        "effort": 546,
+        "level": 0.23,
+        "bugs": 0.04,
+        "time": 30,
+        "intelligentContent": 29.08,
+        "number_operators": 16,
+        "number_operands": 26,
+        "number_operators_unique": 2,
+        "number_operands_unique": 6,
+        "cloc": 9,
+        "loc": 68,
+        "lloc": 59,
+        "mi": 73.24,
+        "mIwoC": 46.53,
+        "commentWeight": 26.71,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 0,
+        "relativeDataComplexity": 11.45,
+        "relativeSystemComplexity": 11.45,
+        "totalStructuralComplexity": 0,
+        "totalDataComplexity": 126,
+        "totalSystemComplexity": 126,
+        "package": "App\\Entity\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 0,
+        "instability": 0,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\DataFixtures\\AppFixtures",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "load",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 1,
+        "nbMethods": 1,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 1,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 1,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "Doctrine\\Bundle\\FixturesBundle\\Fixture",
+            "Doctrine\\Persistence\\ObjectManager"
+        ],
+        "parents": [
+            "Doctrine\\Bundle\\FixturesBundle\\Fixture"
+        ],
+        "implements": [],
+        "lcom": 1,
+        "length": 2,
+        "vocabulary": 1,
+        "volume": 0,
+        "difficulty": 0,
+        "effort": 0,
+        "level": 1,
+        "bugs": 0,
+        "time": 0,
+        "intelligentContent": 0,
+        "number_operators": 0,
+        "number_operands": 2,
+        "number_operators_unique": 0,
+        "number_operands_unique": 1,
+        "cloc": 2,
+        "loc": 10,
+        "lloc": 8,
+        "mi": 202.94,
+        "mIwoC": 171,
+        "commentWeight": 31.94,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 1,
+        "relativeDataComplexity": 0.5,
+        "relativeSystemComplexity": 1.5,
+        "totalStructuralComplexity": 1,
+        "totalDataComplexity": 0.5,
+        "totalSystemComplexity": 1.5,
+        "package": "App\\DataFixtures\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 2,
+        "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -516,6 +941,7 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 4,
         "instability": 0.8,
+        "numberOfUnitTests": 1,
         "violations": {}
     },
     {
@@ -581,6 +1007,7 @@ var classes = [
         "afferentCoupling": 1,
         "efferentCoupling": 2,
         "instability": 0.67,
+        "numberOfUnitTests": 4,
         "violations": {}
     },
     {
@@ -657,10 +1084,11 @@ var classes = [
         "totalDataComplexity": 2.5,
         "totalSystemComplexity": 38.5,
         "package": "App\\Game\\",
-        "pageRank": 0.05,
+        "pageRank": 0.04,
         "afferentCoupling": 2,
         "efferentCoupling": 2,
         "instability": 0.5,
+        "numberOfUnitTests": 4,
         "violations": {}
     },
     {
@@ -754,10 +1182,11 @@ var classes = [
         "totalDataComplexity": 12.5,
         "totalSystemComplexity": 17.5,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 2,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -876,10 +1305,11 @@ var classes = [
         "totalDataComplexity": 5.85,
         "totalSystemComplexity": 1013.85,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 5,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1006,10 +1436,107 @@ var classes = [
         "totalDataComplexity": 8.06,
         "totalSystemComplexity": 2320.06,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 6,
         "instability": 1,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Controller\\ProjectController",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "home",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "about",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "indicators",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "data",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 4,
+        "nbMethods": 4,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 4,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 0,
+        "wmc": 4,
+        "ccn": 1,
+        "ccnMethodMax": 1,
+        "externals": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Service\\MarkdownPageRenderer",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Service\\MarkdownPageRenderer",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Service\\MarkdownPageRenderer",
+            "Symfony\\Component\\HttpFoundation\\Response",
+            "App\\Service\\MarkdownPageRenderer",
+            "App\\Repository\\FishStockRepository",
+            "App\\Repository\\MarineProtectionRepository"
+        ],
+        "parents": [
+            "Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController"
+        ],
+        "implements": [],
+        "lcom": 1,
+        "length": 96,
+        "vocabulary": 30,
+        "volume": 471.06,
+        "difficulty": 4.11,
+        "effort": 1936.59,
+        "level": 0.24,
+        "bugs": 0.16,
+        "time": 108,
+        "intelligentContent": 114.58,
+        "number_operators": 22,
+        "number_operands": 74,
+        "number_operators_unique": 3,
+        "number_operands_unique": 27,
+        "cloc": 5,
+        "loc": 39,
+        "lloc": 34,
+        "mi": 74.08,
+        "mIwoC": 47.74,
+        "commentWeight": 26.33,
+        "kanDefect": 0.15,
+        "relativeStructuralComplexity": 25,
+        "relativeDataComplexity": 0.92,
+        "relativeSystemComplexity": 25.92,
+        "totalStructuralComplexity": 100,
+        "totalDataComplexity": 3.67,
+        "totalSystemComplexity": 103.67,
+        "package": "App\\Controller\\",
+        "pageRank": 0.01,
+        "afferentCoupling": 0,
+        "efferentCoupling": 5,
+        "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1073,10 +1600,11 @@ var classes = [
         "totalDataComplexity": 0.5,
         "totalSystemComplexity": 9.5,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 4,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1188,10 +1716,11 @@ var classes = [
         "totalDataComplexity": 5.22,
         "totalSystemComplexity": 453.22,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 4,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1318,10 +1847,11 @@ var classes = [
         "totalDataComplexity": 4.41,
         "totalSystemComplexity": 2052.41,
         "package": "App\\Controller\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 6,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1390,10 +1920,80 @@ var classes = [
         "totalDataComplexity": 1,
         "totalSystemComplexity": 9,
         "package": "App\\Service\\",
-        "pageRank": 0.03,
-        "afferentCoupling": 1,
+        "pageRank": 0.05,
+        "afferentCoupling": 2,
         "efferentCoupling": 4,
-        "instability": 0.8,
+        "instability": 0.67,
+        "numberOfUnitTests": 0,
+        "violations": {}
+    },
+    {
+        "name": "App\\Service\\MarkdownPageRenderer",
+        "interface": false,
+        "abstract": false,
+        "final": false,
+        "methods": [
+            {
+                "name": "__construct",
+                "role": "setter",
+                "_type": "Hal\\Metric\\FunctionMetric"
+            },
+            {
+                "name": "renderPage",
+                "role": null,
+                "public": true,
+                "private": false,
+                "_type": "Hal\\Metric\\FunctionMetric"
+            }
+        ],
+        "nbMethodsIncludingGettersSetters": 2,
+        "nbMethods": 1,
+        "nbMethodsPrivate": 0,
+        "nbMethodsPublic": 1,
+        "nbMethodsGetter": 0,
+        "nbMethodsSetters": 1,
+        "wmc": 2,
+        "ccn": 2,
+        "ccnMethodMax": 2,
+        "externals": [
+            "App\\Service\\MarkdownParser",
+            "Symfony\\Component\\Filesystem\\Exception\\FileNotFoundException"
+        ],
+        "parents": [],
+        "implements": [],
+        "lcom": 1,
+        "length": 12,
+        "vocabulary": 7,
+        "volume": 33.69,
+        "difficulty": 3.38,
+        "effort": 113.7,
+        "level": 0.3,
+        "bugs": 0.01,
+        "time": 6,
+        "intelligentContent": 9.98,
+        "number_operators": 3,
+        "number_operands": 9,
+        "number_operators_unique": 3,
+        "number_operands_unique": 4,
+        "cloc": 2,
+        "loc": 18,
+        "lloc": 16,
+        "mi": 87.46,
+        "mIwoC": 62.77,
+        "commentWeight": 24.69,
+        "kanDefect": 0.22,
+        "relativeStructuralComplexity": 1,
+        "relativeDataComplexity": 1,
+        "relativeSystemComplexity": 2,
+        "totalStructuralComplexity": 2,
+        "totalDataComplexity": 2,
+        "totalSystemComplexity": 4,
+        "package": "App\\Service\\",
+        "pageRank": 0.02,
+        "afferentCoupling": 1,
+        "efferentCoupling": 2,
+        "instability": 0.67,
+        "numberOfUnitTests": 0,
         "violations": {}
     },
     {
@@ -1446,10 +2046,11 @@ var classes = [
         "totalDataComplexity": 0,
         "totalSystemComplexity": 0,
         "package": "App\\",
-        "pageRank": 0.02,
+        "pageRank": 0.01,
         "afferentCoupling": 0,
         "efferentCoupling": 1,
         "instability": 1,
+        "numberOfUnitTests": 0,
         "violations": {}
     }
 ]
