@@ -1549,3 +1549,4 @@ b4e74a,::1,GET,http://localhost:8080/report/public/proj,1724580606,,200,request
 8033ce,::1,GET,http://localhost:8080/report/public/proj/about,1724580611,,200,request
 8faf48,::1,GET,http://localhost:8080/report/public/proj/goals,1724580612,,200,request
 b80e64,::1,GET,http://localhost:8080/report/public/data,1724580613,,200,request
+0cc4ca,::1,GET,http://localhost:8080/report/public/proj/goals,1724582598,,200,request

@@ -1,7 +1,6 @@
 <div align="center">
   
-  <img src="app/public/img/profilecircle.png" alt="Bild på mig" width="100">
-  
+  <img src="public/img/profilecircle.png" alt="Bild på mig" width="100">
   <h1>Hannas Redovisningssida</h1>
   
 </div>
@@ -22,8 +21,7 @@ Projektet använder följande teknologier och verktyg:
 
 ## Beroenden
 
-Projektet använder följande beroenden:
-
+PHP-bibliotek:
 	•	doctrine/orm
 	•	symfony/framework-bundle
 	•	symfony/twig-bundle
@@ -33,6 +31,15 @@ Projektet använder följande beroenden:
 	•	phpunit/phpunit
 	•	symfony/webpack-encore-bundle
 	•	symfony/doctrine-fixtures-bundle
+
+JavaScript-bibliotek:
+	•	chart.js
+
+## Databas
+
+Det här projektet använder en SQLite-databas som ligger i `var/data.db`.
+
+Denna databasfil är inkluderad i projektet och innehåller redan all nödvändig data, så inga ytterligare steg är nödvändiga för att sätta upp databasen. 
 
 # Instruktioner 
 ## Komma Igång
